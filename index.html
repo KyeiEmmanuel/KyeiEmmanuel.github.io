@@ -2,103 +2,471 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Emmanuel Kyei — Multidisciplinary Artist, Market Researcher, and Systematic Thinker.">
-<title>Emmanuel Kyei — Rickylove</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Emmanuel Kyei (Rickylove) — Artist, Quantitative Finance & System Architect.">
+<title>Emmanuel Kyei — Artist & System Architect</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-main: #0B0E14;
+    --bg-card: #131722;
+    --bg-card-hover: #1A202C;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(212, 175, 55, 0.3);
+    
+    --text-primary: #F3F4F6;
+    --text-secondary: #9CA3AF;
+    --text-muted: #6B7280;
+    
+    --accent-gold: #D4AF37;
+    --accent-gold-light: #F3E5AB;
+    --accent-blue: #38BDF8;
+    
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Global Typography */
+  h1, h2, h3, h4 { color: var(--text-primary); font-weight: 600; line-height: 1.25; }
+  h1 em, h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--accent-gold); }
+  p { color: var(--text-secondary); margin-bottom: 1rem; }
+  a { text-decoration: none; color: inherit; transition: all 0.25s ease; }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  /* Header & Navigation */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(11, 14, 20, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem; }
+  .brand span { color: var(--accent-gold); font-family: var(--font-mono); }
+  
+  nav { display: flex; gap: 1.75rem; align-items: center; }
+  nav a { font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+  nav a:hover { color: var(--text-primary); }
+  .navbtn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    background: transparent;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold) !important;
+    font-weight: 600;
+  }
+  .navbtn:hover { background: var(--accent-gold); color: var(--bg-main) !important; }
+
+  /* Sections Shared Styles */
+  section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid var(--border-color); }
+  .section-title { font-size: 2.25rem; margin-bottom: 2.5rem; }
+
+  /* Hero Section */
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 8rem;
+    position: relative;
+  }
+  .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; }
+  .hero p.lead { font-size: 1.25rem; max-width: 750px; color: var(--text-secondary); margin-bottom: 2rem; }
+  .actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  
+  .btn {
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn.primary { background: var(--accent-gold); color: var(--bg-main); }
+  .btn.primary:hover { background: var(--accent-gold-light); }
+  .btn.secondary { border: 1px solid var(--border-color); color: var(--text-primary); }
+  .btn.secondary:hover { background: var(--bg-card-hover); }
+
+  /* Grid Layouts & Cards */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--border-accent); }
+  .card h3 { margin-bottom: 0.75rem; font-size: 1.25rem; }
+  .card p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0; }
+
+  /* Roadmap / Quant */
+  .roadmap-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .roadmap-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .roadmap-num {
+    font-family: var(--font-mono);
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  /* Focus List Tag Pills */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .tag {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent-gold);
+    border: 1px solid var(--border-accent);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+  }
+
+  /* Contact Links */
+  .contact-methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .contact-card:hover { border-color: var(--accent-gold); background: var(--bg-card-hover); }
+
+  /* Footer */
+  footer {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    header { padding: 1rem; }
+    nav { display: none; } /* Simplified mobile header */
+    section { padding: 4rem 1rem; }
+    .hero h1 { font-size: 2.25rem; }
+    .roadmap-item { flex-direction: column; gap: 0.5rem; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
 </head>
 <body>
-<div class="progress"></div>
+
 <header>
-<a class="brand" href="#home"><span>EK</span> EMMANUEL KYEI</a>
-<button class="menu" aria-label="Open menu">☰</button>
-<nav>
-<a href="#about">About</a><a href="#art">Art</a><a href="#fx">FX</a><a href="#quant">Quant</a><a href="#projects">Projects</a><a href="#contact" class="navbtn">Connect</a>
-</nav>
+  <a class="brand" href="#home"><span>EK</span> EMMANUEL KYEI</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#art">Rickylove Art</a>
+    <a href="#fx">Rickylove FX</a>
+    <a href="#quant">Quant</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact" class="navbtn">LET’S CONNECT</a>
+  </nav>
 </header>
 
 <main>
-<section id="home" class="hero">
-<div class="grid"></div>
-<div class="hero-copy reveal">
-<p class="eyebrow">EMMANUEL KYEI · RICKYLOVE</p>
-<h1>Creativity meets <em>analysis.</em></h1>
-<p class="lead">Multidisciplinary artist, market researcher, and quantitative practitioner exploring the intersection of visual creativity, financial markets, and systematic thinking.</p>
-<div class="actions"><a class="btn dark" href="#about">Explore my work ↗</a><a class="btn" href="#contact">Let's connect</a></div>
-</div>
-<div class="orb reveal"><div class="ring r1"></div><div class="ring r2"></div><div class="core"><b>R</b><small>RICKYLOVE</small></div><i>ART</i><i>FX</i><i>QUANT</i></div>
-</section>
+  <!-- 1. HOME SECTION -->
+  <section id="home" class="hero">
+    <span class="eyebrow">EMMANUEL KYEI · RICKYLOVE</span>
+    <h1>Artist · Quantitative Finance & <em>System Architect</em></h1>
+    <p class="lead">Exploring the intersection of visual creativity, financial markets, and structured quantitative systems[span_2](start_span)[span_2](end_span).</p>
+    <div class="actions">
+      <a class="btn primary" href="#art">Explore My Work ↗</a>
+      <a class="btn secondary" href="#about">About Me</a>
+    </div>
+  </section>
 
-<section id="about" class="section">
-<p class="eyebrow">01 · ABOUT</p><h2>One mindset.<br><em>Different expressions.</em></h2>
-<div class="two">
-<div class="bigtext">I’m Emmanuel Kyei, professionally known as <strong>Rickylove</strong>—a multidisciplinary creator building at the intersection of art, financial markets, and structured thinking.</div>
-<div class="copy"><p>My creative foundation began with Rickylove Art, where I developed a deep appreciation for observation, precision, composition, and detail.</p><p>These same principles naturally led me to financial markets, where I explore price action, market structure, liquidity, risk management, and quantitative research through Rickylove FX.</p><p>My long-term goal is to deepen my expertise in quantitative finance and build robust, systematic trading frameworks grounded in research, testing, probability, and disciplined risk management.</p></div>
-</div>
-<div class="quote">“Observe carefully. Understand the structure. Develop a clear process. Improve consistently.”</div>
-</section>
+  <!-- 2. ABOUT SECTION -->
+  <section id="about">
+    <span class="eyebrow">01 · ABOUT ME</span>
+    <h2 class="section-title">One mindset. <em>Different expressions.</em>[span_3](start_span)[span_3](end_span)</h2>
+    <div class="grid-2">
+      <div>
+        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">My Story</h3>
+        <p>I’m Emmanuel Kyei, professionally known as <strong>Rickylove</strong>—a multidisciplinary creator building a personal brand at the intersection of art, financial markets, and structured thinking[span_4](start_span)[span_4](end_span).</p>
+        <p>My creative journey began with Rickylove Art, where I developed a deep appreciation for observation, precision, composition, and detail[span_5](start_span)[span_5](end_span). Art taught me to study patterns, understand structure, and communicate ideas with intention[span_6](start_span)[span_6](end_span). These same principles naturally led me to financial markets, where I explore price action, market structure, liquidity, risk management, and quantitative research through Rickylove FX[span_7](start_span)[span_7](end_span).</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">My Philosophy</h3>
+        <blockquote style="border-left: 2px solid var(--accent-gold); padding-left: 1rem; font-style: italic; margin-bottom: 1.5rem; color: var(--accent-gold-light);">
+          "Observe carefully. Understand the structure. Develop a clear process. Improve consistently.[span_8](start_span)"[span_8](end_span)
+        </blockquote>
+        <p>Rickylove Art and Rickylove FX represent two connected expressions of the same mindset[span_9](start_span)[span_9](end_span). One explores creativity through visual work; the other applies analytical discipline to market research and trading[span_10](start_span)[span_10](end_span). Creativity and logic are not opposites—they are complementary tools for understanding complex systems[span_11](start_span)[span_11](end_span).</p>
+      </div>
+    </div>
 
-<section id="art" class="section dark">
-<p class="eyebrow">02 · RICKYLOVE ART</p><h2>Where observation<br><em>becomes creation.</em></h2>
-<div class="artgrid">
-<div class="art mainart"><div>RICKYLOVE<br><small>FEATURED ARTWORK</small></div><footer>FEATURED WORK <b>Portrait Study — 01</b></footer></div>
-<div class="stack"><div class="art"><div>01</div><footer>FINE ART <b>Portrait Collection</b></footer></div><div class="art"><div>02</div><footer>CREATIVE <b>Visual Experiments</b></footer></div></div>
-</div>
-<p class="section-note">Art taught me to slow down, observe closely, understand structure, and pay attention to details that are easy to overlook.</p>
-</section>
+    <div style="margin-top: 3rem;">
+      <h3>What I’m Focused On</h3>
+      <div class="tags">
+        <span class="tag">Art & Creative Development</span>
+        <span class="tag">Quantitative Finance</span>
+        <span class="tag">Systematic Trading</span>
+        <span class="tag">Market Research</span>
+        <span class="tag">Risk Management</span>
+        <span class="tag">Financial Education</span>
+      </div>
+    </div>
+  </section>
 
-<section id="fx" class="section">
-<p class="eyebrow">03 · RICKYLOVE FX</p><h2>Market research.<br><em>Structured thinking.</em></h2>
-<p class="intro">My financial-market work focuses primarily on XAUUSD and the study of price action, market structure, liquidity, risk management, and systematic trading.</p>
-<div class="cards">
-<article><small>01</small><h3>Market Structure</h3><p>Trend, range behaviour, price action and liquidity.</p></article>
-<article><small>02</small><h3>Risk Management</h3><p>Position sizing, trade management and capital protection.</p></article>
-<article><small>03</small><h3>Systematic Thinking</h3><p>Turning observations into rules that can be researched and tested.</p></article>
-</div>
-<div class="research"><span>RESEARCH PHILOSOPHY</span><h3>No hype. No promises.<br><em>Research first.</em></h3><p>Test the idea. Measure the result. Improve the process.</p></div>
-</section>
+  <!-- 3. RICKYLOVE ART SECTION -->
+  <section id="art">
+    <span class="eyebrow">02 · RICKYLOVE ART</span>
+    <h2 class="section-title">Where observation <em>becomes creation.</em>[span_12](start_span)[span_12](end_span)</h2>
+    <p style="max-width: 700px; margin-bottom: 2.5rem;">Art taught me to slow down, observe closely, understand structure, and pay attention to details that are easy to overlook[span_13](start_span)[span_13](end_span).</p>
+    
+    <div class="grid-3">
+      <div class="card">
+        <span class="eyebrow" style="font-size: 0.7rem;">PORTFOLIO ITEM 01</span>
+        <h3>Portraits & Pencil Work</h3>
+        <p>High-precision realistic drawings, charcoal studies, and detailed portraiture exploring human expression[span_14](start_span)[span_14](end_span).</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow" style="font-size: 0.7rem;">PORTFOLIO ITEM 02</span>
+        <h3>Realistic Visual Art</h3>
+        <p>Studies in light, composition, shadow distribution, and architectural form[span_15](start_span)[span_15](end_span).</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow" style="font-size: 0.7rem;">PORTFOLIO ITEM 03</span>
+        <h3>Creative Experiments</h3>
+        <p>Branding graphics, digital art explorations, and high-fashion editorial concepts[span_16](start_span)[span_16](end_span).</p>
+      </div>
+    </div>
 
-<section id="quant" class="section dark">
-<p class="eyebrow">04 · QUANTITATIVE FINANCE</p><h2>From market intuition<br><em>to systematic research.</em></h2>
-<p class="intro muted">My long-term direction is quantitative finance: understanding markets through probability, statistics, data, research and robust system design.</p>
-<div class="roadmap">
-<div><b>01</b><article><small>FOUNDATION</small><h3>Quantitative Foundations</h3><p>Probability · Statistics · Data · Mathematical Thinking</p></article><strong>✓</strong></div>
-<div><b>02</b><article><small>NEXT</small><h3>Quantitative Language</h3><p>Alpha · Beta · Signal · Noise · Features · Factors · Models</p></article></div>
-<div><b>03</b><article><small>RESEARCH</small><h3>Quantitative Research</h3><p>Hypothesis · Data · Backtesting · Validation · Robustness</p></article></div>
-<div><b>04</b><article><small>SYSTEMS</small><h3>Systematic Trading</h3><p>Strategy Design · Risk Engines · Execution · Portfolio Construction</p></article></div>
-<div><b>05</b><article><small>ADVANCED</small><h3>Advanced Research</h3><p>Statistical Modeling · Machine Learning · Financial Engineering</p></article></div>
-</div>
-</section>
+    <div style="margin-top: 2.5rem;">
+      <a class="btn secondary" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener">View Art Portfolio on Instagram ↗</a>
+    </div>
+  </section>
 
-<section id="projects" class="section">
-<p class="eyebrow">05 · PROJECTS</p><h2>Ideas become<br><em>systems.</em></h2>
-<div class="projects">
-<article><small>01 / RESEARCH</small><h3>Systematic Trading Research</h3><p>Rule-based research, backtesting, risk and robustness.</p><b>IN DEVELOPMENT</b></article>
-<article><small>02 / QUANT</small><h3>Quantitative Research Journal</h3><p>A growing collection of notes, experiments and market studies.</p><b>IN DEVELOPMENT</b></article>
-<article><small>03 / ART</small><h3>Rickylove Art Portfolio</h3><p>A curated archive of portrait work and creative projects.</p><b>ONGOING</b></article>
-</div>
-</section>
+  <!-- 4. RICKYLOVE FX SECTION -->
+  <section id="fx">
+    <span class="eyebrow">03 · RICKYLOVE FX</span>
+    <h2 class="section-title">Market research. <em>Structured thinking.</em>[span_17](start_span)[span_17](end_span)</h2>
+    <p style="max-width: 750px; margin-bottom: 2rem;">My work in financial markets focuses primarily on XAUUSD and the study of price action, market structure, liquidity, risk management, and systematic trading[span_18](start_span)[span_18](end_span).</p>
 
-<section class="section dark">
-<p class="eyebrow">06 · MILESTONES</p><h2>The journey is<br><em>still being written.</em></h2>
-<div class="timeline"><p><b>2021</b> Started trading and studying financial markets.</p><p><b>2026</b> Deepened focus on quantitative finance and systematic thinking.</p><p><b>NOW</b> Building knowledge in quantitative research, system architecture and creative development.</p><p><b>FUTURE</b> Continue developing robust research-driven financial systems.</p></div>
-</section>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Market Research</h3>
+        <p>Deep-dive analyses into Price Action dynamics, Market Structure shifts, Liquidity pools, Volatility contraction, and Trend vs. Range behavior[span_19](start_span)[span_19](end_span).</p>
+      </div>
+      <div class="card">
+        <h3>Trading Framework</h3>
+        <p>Structured rules surrounding entry logic, systematic position sizing, dynamic trade management, and disciplined risk preservation[span_20](start_span)[span_20](end_span).</p>
+      </div>
+    </div>
 
-<section id="contact" class="contact">
-<p class="eyebrow">07 · CONTACT</p><h2>Let's build something<br><em>meaningful.</em></h2>
-<p>For creative collaborations, research discussions, professional opportunities or simply connecting, reach out.</p>
-<a class="email" href="mailto:Kyeiemma.9450@gmail.com">Kyeiemma.9450@gmail.com ↗</a>
-<div class="social">
-<a href="https://www.instagram.com/rickylove_art?igsi=MWg4ZXVicGZ0cWZjNA%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
-<a href="https://www.facebook.com/share/198jXoqd9i/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
-<a href="https://github.com/KyeiEmmanuel" target="_blank" rel="noopener">GitHub</a>
-</div>
-</section>
+    <div style="background: var(--bg-card); border-left: 3px solid var(--accent-gold); padding: 2rem; margin-top: 2rem; border-radius: 0 8px 8px 0;">
+      <span class="eyebrow">RESEARCH PHILOSOPHY</span>
+      <h3 style="margin-bottom: 0.5rem;">No hype. No promises. No shortcuts.[span_21](start_span)[span_21](end_span)</h3>
+      <p style="margin-bottom: 0;">Research first. Test the idea. Measure the result. Improve the process[span_22](start_span)[span_22](end_span).</p>
+    </div>
+  </section>
+
+  <!-- 5. QUANTITATIVE FINANCE SECTION -->
+  <section id="quant">
+    <span class="eyebrow">04 · QUANTITATIVE FINANCE</span>
+    <h2 class="section-title">From market intuition <em>to systematic research.</em>[span_23](start_span)[span_23](end_span)</h2>
+    <p style="max-width: 750px;">Translating discretionary market observation into quantitative models, algorithmic risk engines, and robust statistical testing frameworks[span_24](start_span)[span_24](end_span).</p>
+
+    <div class="roadmap-list">
+      <div class="roadmap-item">
+        <div class="roadmap-num">01</div>
+        <div>
+          <h4>Quantitative Foundations <span style="color: var(--accent-gold); font-size: 0.85rem;">[COMPLETED ✓]</span></h4>
+          <p>Probability • Statistics • Data • Mathematical Thinking[span_25](start_span)[span_25](end_span)</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">02</div>
+        <div>
+          <h4>Quantitative Language</h4>
+          <p>Alpha • Beta • Signal • Noise • Features • Factors • Models[span_26](start_span)[span_26](end_span)</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">03</div>
+        <div>
+          <h4>Quantitative Research</h4>
+          <p>Hypothesis Formulation • Data Cleaning • Backtesting • Walk-Forward Validation • Robustness Testing[span_27](start_span)[span_27](end_span)</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">04</div>
+        <div>
+          <h4>Systematic Trading & Architecture</h4>
+          <p>Strategy Design • Risk Engines • MQL5 / Automated Execution • Portfolio Construction[span_28](start_span)[span_28](end_span)</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">05</div>
+        <div>
+          <h4>Advanced Research</h4>
+          <p>Statistical Modeling • Machine Learning • Financial Engineering[span_29](start_span)[span_29](end_span)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PROJECTS SECTION -->
+  <section id="projects">
+    <span class="eyebrow">05 · PROJECTS</span>
+    <h2 class="section-title">Ideas become <em>systems.</em>[span_30](start_span)[span_30](end_span)</h2>
+    
+    <div class="grid-3">
+      <div class="card">
+        <span class="eyebrow" style="font-size: 0.7rem;">TRADING SYSTEMS</span>
+        <h3>Automated Strategy Research</h3>
+        <p>Developing rule-based backtesting frameworks and MQL5 automated systems with custom trailing risk algorithms[span_31](start_span)[span_31](end_span).</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow" style="font-size: 0.7rem;">QUANT RESEARCH</span>
+        <h3>Market Journal & Studies</h3>
+        <p>A statistical ledger evaluating regime behavior, volatility metrics, and edge evaluation on XAUUSD[span_32](start_span)[span_32](end_span).</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow" style="font-size: 0.7rem;">CREATIVE PROJECTS</span>
+        <h3>Rickylove Art Archive</h3>
+        <p>A curated archive of pencil portraits, visual art experiments, and creative brand designs[span_33](start_span)[span_33](end_span).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. MILESTONES SECTION -->
+  <section id="milestones">
+    <span class="eyebrow">06 · MILESTONES & JOURNEY</span>
+    <h2 class="section-title">The journey <em>so far.</em></h2>
+    
+    <div class="roadmap-list">
+      <div class="roadmap-item" style="padding: 1rem 1.5rem;">
+        <div class="roadmap-num">2021</div>
+        <div><p style="margin: 0; color: var(--text-primary);">Started trading and studying financial price action dynamics[span_34](start_span)[span_34](end_span).</p></div>
+      </div>
+      <div class="roadmap-item" style="padding: 1rem 1.5rem;">
+        <div class="roadmap-num">2026</div>
+        <div><p style="margin: 0; color: var(--text-primary);">Deepened focus on quantitative finance, statistical edge testing, and systematic trading systems[span_35](start_span)[span_35](end_span).</p></div>
+      </div>
+      <div class="roadmap-item" style="padding: 1rem 1.5rem;">
+        <div class="roadmap-num">NOW</div>
+        <div><p style="margin: 0; color: var(--text-primary);">Completed quantitative trading foundations and progressing toward complete system architecture[span_36](start_span)[span_36](end_span).</p></div>
+      </div>
+      <div class="roadmap-item" style="padding: 1rem 1.5rem;">
+        <div class="roadmap-num">FUTURE</div>
+        <div><p style="margin: 0; color: var(--text-primary);">Building institutional-grade quantitative finance expertise, research publications, and systematic trading engines[span_37](start_span)[span_37](end_span).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONTACT SECTION -->
+  <section id="contact" style="border-bottom: none;">
+    <span class="eyebrow">07 · CONTACT</span>
+    <h2 class="section-title">Let’s <em>Connect.</em>[span_38](start_span)[span_38](end_span)</h2>
+    <p style="max-width: 600px;">For collaborations, creative projects, research discussions, or professional opportunities, feel free to get in touch[span_39](start_span)[span_39](end_span).</p>
+
+    <div class="contact-methods">
+      <a class="contact-card" href="mailto:KyeiEmma.9450@gmail.com">
+        <span style="color: var(--accent-gold); font-weight: bold;">✉</span>
+        <div>
+          <span style="display: block; font-size: 0.75rem; color: var(--text-muted);">EMAIL</span>
+          <strong style="font-size: 0.9rem;">KyeiEmma.9450@gmail.com</strong>[span_40](start_span)[span_40](end_span)
+        </div>
+      </a>
+      
+      <a class="contact-card" href="https://wa.me/233200006731" target="_blank" rel="noopener">
+        <span style="color: var(--accent-gold); font-weight: bold;">💬</span>
+        <div>
+          <span style="display: block; font-size: 0.75rem; color: var(--text-muted);">WHATSAPP</span>
+          <strong style="font-size: 0.9rem;">+233 20 000 6731</strong>[span_41](start_span)[span_41](end_span)
+        </div>
+      </a>
+
+      <a class="contact-card" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener">
+        <span style="color: var(--accent-gold); font-weight: bold;">📷</span>
+        <div>
+          <span style="display: block; font-size: 0.75rem; color: var(--text-muted);">INSTAGRAM</span>
+          <strong style="font-size: 0.9rem;">@rickylove_art</strong>[span_42](start_span)[span_42](end_span)
+        </div>
+      </a>
+
+      <a class="contact-card" href="https://www.facebook.com/profile.php?id=100063567956769" target="_blank" rel="noopener">
+        <span style="color: var(--accent-gold); font-weight: bold;">🌐</span>
+        <div>
+          <span style="display: block; font-size: 0.75rem; color: var(--text-muted);">FACEBOOK</span>
+          <strong style="font-size: 0.9rem;">Emmanuel Kyei</strong>[span_43](start_span)[span_43](end_span)
+        </div>
+      </a>
+    </div>
+  </section>
 </main>
 
-<footer><b>EMMANUEL KYEI</b><span>Creativity meets analysis. Ideas become systems.</span><small>© <i id="year"></i> Emmanuel Kyei</small></footer>
-<script src="script.js"></script>
-</body></html>
+<footer>
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
+    <div>
+      <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Emmanuel Kyei — Rickylove</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Creativity meets analysis. Ideas become systems[span_44](start_span)[span_44](end_span).</p>
+    </div>
+    <div style="display: flex; gap: 1.5rem; font-size: 0.9rem;">
+      <a href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener">Instagram</a>[span_45](start_span)[span_45](end_span)
+      <a href="https://github.com/KyeiEmmanuel" target="_blank" rel="noopener">GitHub</a>[span_46](start_span)[span_46](end_span)
+      <a href="https://www.facebook.com/profile.php?id=100063567956769" target="_blank" rel="noopener">Facebook</a>[span_47](start_span)[span_47](end_span)
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Emmanuel Kyei. All rights reserved[span_48](start_span)[span_48](end_span).</span>
+    <span>Designed for GitHub Pages</span>
+  </div>
+</footer>
+
+</body>
+</html>

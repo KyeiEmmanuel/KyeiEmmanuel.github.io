@@ -3,11 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Emmanuel Kyei — Visual Artist, Quantitative Finance & System Architect.">
-  <title>Emmanuel Kyei — Brand Portfolio</title>
+  <title>Emmanuel Kyei — Visual Artist, Quantitative Finance & Systems</title>
+  <meta name="description" content="Emmanuel Kyei (Rickylove) — Visual Fine Artist, Quantitative Finance Researcher & MQL5 System Architect.">
+  
+  <!-- Social Media & WhatsApp Link Preview (Open Graph) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Emmanuel Kyei (Rickylove) — Portfolio">
+  <meta property="og:description" content="Visual Fine Artist, Quantitative Finance Researcher & Systems Architect.">
+  <meta property="og:image" content="899D4ADD-B676-41A0-A776-902C77D18539.jpeg">
+  <meta property="og:url" content="https://kyeiemmanuel.github.io">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg: #080a0d;
@@ -33,7 +42,7 @@
       overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; height: auto; display: block; object-fit: cover; background: var(--card2); }
+    img { max-width: 100%; display: block; object-fit: cover; background: var(--card2); }
     
     .container { width: min(var(--max), calc(100% - 48px)); margin: auto; }
     .eyebrow {
@@ -73,11 +82,11 @@
 
     /* Hero Section */
     .hero {
-      padding-top: 150px;
-      padding-bottom: 90px;
+      padding-top: 130px;
+      padding-bottom: 70px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      grid-template-columns: 340px 1fr;
+      gap: 48px;
       align-items: center;
     }
     .hero-img-wrap {
@@ -85,17 +94,25 @@
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--line);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
       background: var(--card);
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
     }
-    .hero-img-wrap img { width: 100%; height: 580px; object-fit: cover; object-position: top center; }
-    .hero h1 { font-size: clamp(2.5rem, 4.5vw, 4rem); margin: 16px 0 20px; }
-    .bio-text { font-size: 1.05rem; line-height: 1.7; margin-bottom: 28px; }
+    .hero-img-wrap img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .hero h1 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin: 12px 0 16px; }
+    .bio-text { font-size: 1rem; line-height: 1.65; margin-bottom: 24px; }
     .actions { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn {
       display: inline-flex;
       align-items: center;
-      padding: 12px 24px;
+      padding: 10px 20px;
       font-size: 0.85rem;
       font-weight: 700;
       border-radius: 4px;
@@ -107,15 +124,15 @@
     .btn-secondary:hover { border-color: var(--gold); }
 
     /* Sections General */
-    section.section { padding: 100px 0; border-bottom: 1px solid var(--line); }
-    .section-head { margin-bottom: 48px; }
-    .section-head h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-top: 10px; }
+    section.section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+    .section-head { margin-bottom: 40px; }
+    .section-head h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-top: 8px; }
 
     /* Art Gallery Section */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
     .gallery-card {
       background: var(--card);
@@ -125,10 +142,14 @@
       transition: transform 0.3s, border-color 0.3s;
     }
     .gallery-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-    .gallery-card img { width: 100%; height: 360px; }
-    .gallery-info { padding: 20px; }
-    .gallery-info h3 { font-size: 1.2rem; margin-bottom: 6px; }
-    .gallery-info p { font-size: 0.88rem; }
+    .gallery-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+    .gallery-info { padding: 18px; }
+    .gallery-info h3 { font-size: 1.1rem; margin-bottom: 4px; }
+    .gallery-info p { font-size: 0.85rem; }
 
     /* Professional Divisions (Finance & Systems) */
     .p-grid {
@@ -140,35 +161,41 @@
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 8px;
-      padding: 36px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
     }
-    .p-card img { border-radius: 6px; margin-bottom: 20px; height: 220px; width: 100%; }
-    .p-card h3 { font-size: 1.6rem; margin: 12px 0; }
-    .p-card p { font-size: 0.95rem; margin-bottom: 20px; }
-    .p-list { list-style: none; margin-top: 12px; }
+    .p-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    .p-card h3 { font-size: 1.4rem; margin: 10px 0; }
+    .p-card p { font-size: 0.9rem; margin-bottom: 16px; }
+    .p-list { list-style: none; margin-top: 10px; }
     .p-list li {
       padding: 8px 0;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       display: flex;
       justify-content: space-between;
     }
 
-    /* Contact */
+    /* Contact & Social Links */
     .contact-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 40px;
       align-items: center;
     }
-    .contact-links { display: grid; gap: 14px; }
+    .contact-links { display: grid; gap: 12px; }
     .contact-item {
-      padding: 18px 22px;
+      padding: 16px 20px;
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 6px;
@@ -178,12 +205,28 @@
       transition: 0.2s;
     }
     .contact-item:hover { border-color: var(--gold); transform: translateX(4px); }
-    .contact-item small { display: block; color: var(--muted); font-size: 0.7rem; text-transform: uppercase; }
-    .contact-item strong { font-size: 0.95rem; }
+    .contact-left { display: flex; align-items: center; gap: 14px; }
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 6px;
+      background: var(--card2);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 20px; height: 20px; fill: currentColor; }
+    .contact-item small { display: block; color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .contact-item strong { font-size: 0.92rem; }
+    .contact-arrow { color: var(--muted); font-size: 1.1rem; }
+    .contact-item:hover .contact-arrow { color: var(--gold); }
 
     /* Footer */
-    footer { padding: 40px 0; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); }
-    .foot-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    footer { padding: 36px 0; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); }
+    .foot-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
 
     /* Responsive */
     @media (max-width: 868px) {
@@ -200,8 +243,9 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      .hero, .p-grid, .contact-wrapper { grid-template-columns: 1fr; }
-      .hero-img-wrap img { height: 420px; }
+      .hero { grid-template-columns: 1fr; gap: 24px; text-align: left; }
+      .hero-img-wrap { width: 100%; max-width: 280px; }
+      .p-grid, .contact-wrapper { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -226,8 +270,7 @@
     <!-- Hero / Profile Section -->
     <section class="container hero" id="about">
       <div class="hero-img-wrap">
-        <!-- In green outfit -->
-        <img src="899D4ADD-B676-41A0-A776-902C77D18539.jpeg" onerror="this.src='https://placehold.co/600x800/161c26/d8b45a?text=Emmanuel+Kyei'" alt="Emmanuel Kyei in Green Outfit">
+        <img src="899D4ADD-B676-41A0-A776-902C77D18539.jpeg" onerror="this.src='https://placehold.co/400x500/161c26/d8b45a?text=Emmanuel+Kyei'" alt="Emmanuel Kyei in Green Outfit">
       </div>
       <div>
         <span class="eyebrow">Professional Portfolio</span>
@@ -250,33 +293,29 @@
           <h2>Art Gallery & Design Studio</h2>
         </div>
         <div class="gallery-grid">
-          <!-- In draw studio with Artwork frame on wall -->
           <div class="gallery-card">
-            <img src="IMG_3378.jpeg" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Drawing+Studio'" alt="Drawing Studio with Artwork">
+            <img src="IMG_3378.jpeg" loading="lazy" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Drawing+Studio'" alt="Drawing Studio with Artwork">
             <div class="gallery-info">
               <h3>Drawing Studio</h3>
               <p>Studio environment and large-format framed artwork studies.</p>
             </div>
           </div>
-          <!-- Art woman with hand - chin -->
           <div class="gallery-card">
-            <img src="IMG_2105.jpeg" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Woman+Hand+on+Chin'" alt="Art Woman Hand on Chin">
+            <img src="IMG_2105.jpeg" loading="lazy" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Woman+Hand+on+Chin'" alt="Art Woman Hand on Chin">
             <div class="gallery-info">
               <h3>Fine Portraiture</h3>
               <p>Meticulous graphite study focused on human expression and subtle detail.</p>
             </div>
           </div>
-          <!-- Art woman with head -->
           <div class="gallery-card">
-            <img src="IMG_2533.jpeg" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Portrait+Head+Study'" alt="Art Woman Portrait">
+            <img src="IMG_2533.jpeg" loading="lazy" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Portrait+Head+Study'" alt="Art Woman Portrait">
             <div class="gallery-info">
               <h3>Realism Studies</h3>
               <p>Technical charcoal shading exploring light, proportion, and texture.</p>
             </div>
           </div>
-          <!-- With big clock -->
           <div class="gallery-card">
-            <img src="IMG_0859.jpeg" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Clock+Installation'" alt="Big Clock Design">
+            <img src="IMG_0859.jpeg" loading="lazy" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Clock+Installation'" alt="Big Clock Design">
             <div class="gallery-info">
               <h3>Architectural Art</h3>
               <p>Custom graphic interior installations and statement design pieces.</p>
@@ -294,33 +333,31 @@
           <h2>Quantitative Finance & Systems Architecture</h2>
         </div>
         <div class="p-grid">
-          <!-- Quantitative Finance: Image with laptop and monitor -->
           <div class="p-card">
             <div>
-              <img src="5873CDC7-5B8B-45B1-B55B-E96FD02229C5.jpeg" onerror="this.src='https://placehold.co/600x400/161c26/d8b45a?text=Trading+Terminal'" alt="Trading Terminal with Laptop and Monitor">
+              <img src="5873CDC7-5B8B-45B1-B55B-E96FD02229C5.jpeg" loading="lazy" onerror="this.src='https://placehold.co/600x400/161c26/d8b45a?text=Trading+Terminal'" alt="Trading Terminal with Laptop and Monitor">
               <span class="eyebrow">Rickylove FX</span>
               <h3>Quantitative Finance</h3>
               <p>Research-driven analysis centered on XAUUSD, market structure, liquidity dynamics, and algorithmic risk control.</p>
             </div>
             <ul class="p-list">
+              <li><span>Primary Pairs</span> <strong>XAUUSD, BTCUSD</strong></li>
               <li><span>Market Regimes</span> <strong>Liquidity & Volatility</strong></li>
               <li><span>Risk Architecture</span> <strong>Capital Protection</strong></li>
-              <li><span>Statistical Testing</span> <strong>Backtesting Models</strong></li>
             </ul>
           </div>
 
-          <!-- System Architecture: Sitting in front of laptop / Holding keyboard -->
           <div class="p-card" id="systems">
             <div>
-              <img src="7F5DCFE8-5D70-430B-B444-BC4489360400.jpeg" onerror="this.src='https://placehold.co/600x400/161c26/d8b45a?text=System+Architecture'" alt="Sitting in front of Laptop">
+              <img src="7F5DCFE8-5D70-430B-B444-BC4489360400.jpeg" loading="lazy" onerror="this.src='https://placehold.co/600x400/161c26/d8b45a?text=System+Architecture'" alt="Sitting in front of Laptop">
               <span class="eyebrow">Systems Engineering</span>
               <h3>System Architecture</h3>
               <p>Designing algorithmic systems, rule-based execution models, and automated strategies in MQL5 & Python.</p>
             </div>
             <ul class="p-list">
-              <li><span>Algorithmic Execution</span> <strong>MQL5 Expert Advisors</strong></li>
-              <li><span>Data Modeling</span> <strong>Time-Series Analysis</strong></li>
-              <li><span>Process Control</span> <strong>Systematic Frameworks</strong></li>
+              <li><span>Execution Logic</span> <strong>MQL5 Expert Advisors</strong></li>
+              <li><span>Data Engineering</span> <strong>Time-Series Analysis</strong></li>
+              <li><span>Testing Paradigm</span> <strong>Walk-Forward Backtesting</strong></li>
             </ul>
           </div>
         </div>
@@ -336,33 +373,60 @@
           <p>Available for art commissions, quantitative research discussions, and system engineering inquiries.</p>
         </div>
         <div class="contact-links">
+          <!-- Email Link -->
           <a class="contact-item" href="mailto:KyeiEmma.9450@gmail.com">
-            <div>
-              <small>Email</small>
-              <strong>KyeiEmma.9450@gmail.com</strong>
+            <div class="contact-left">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div>
+                <small>Email</small>
+                <strong>KyeiEmma.9450@gmail.com</strong>
+              </div>
             </div>
-            <span>↗</span>
+            <span class="contact-arrow">↗</span>
           </a>
+
+          <!-- WhatsApp Link -->
           <a class="contact-item" href="https://wa.me/233200006731" target="_blank" rel="noopener">
-            <div>
-              <small>WhatsApp</small>
-              <strong>+233 20 000 6731</strong>
+            <div class="contact-left">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.59c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.24-8.22 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.15.17-.29.18-.54.06s-1.05-.39-2-1.23c-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg>
+              </div>
+              <div>
+                <small>WhatsApp</small>
+                <strong>+233 20 000 6731</strong>
+              </div>
             </div>
-            <span>↗</span>
+            <span class="contact-arrow">↗</span>
           </a>
+
+          <!-- Instagram Link -->
           <a class="contact-item" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener">
-            <div>
-              <small>Instagram</small>
-              <strong>@rickylove_art</strong>
+            <div class="contact-left">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </div>
+              <div>
+                <small>Instagram</small>
+                <strong>@rickylove_art</strong>
+              </div>
             </div>
-            <span>↗</span>
+            <span class="contact-arrow">↗</span>
           </a>
+
+          <!-- GitHub Link -->
           <a class="contact-item" href="https://github.com/KyeiEmmanuel" target="_blank" rel="noopener">
-            <div>
-              <small>GitHub</small>
-              <strong>KyeiEmmanuel</strong>
+            <div class="contact-left">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div>
+                <small>GitHub</small>
+                <strong>KyeiEmmanuel</strong>
+              </div>
             </div>
-            <span>↗</span>
+            <span class="contact-arrow">↗</span>
           </a>
         </div>
       </div>

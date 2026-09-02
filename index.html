@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+    img { max-width: 100%; height: auto; display: block; object-fit: cover; background: var(--card2); }
     
     .container { width: min(var(--max), calc(100% - 48px)); margin: auto; }
     .eyebrow {
@@ -86,6 +86,7 @@
       overflow: hidden;
       border: 1px solid var(--line);
       box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      background: var(--card);
     }
     .hero-img-wrap img { width: 100%; height: 580px; object-fit: cover; object-position: top center; }
     .hero h1 { font-size: clamp(2.5rem, 4.5vw, 4rem); margin: 16px 0 20px; }
@@ -145,7 +146,7 @@
       justify-content: space-between;
       position: relative;
     }
-    .p-card img { border-radius: 6px; margin-bottom: 20px; height: 220px; }
+    .p-card img { border-radius: 6px; margin-bottom: 20px; height: 220px; width: 100%; }
     .p-card h3 { font-size: 1.6rem; margin: 12px 0; }
     .p-card p { font-size: 0.95rem; margin-bottom: 20px; }
     .p-list { list-style: none; margin-top: 12px; }
@@ -225,7 +226,8 @@
     <!-- Hero / Profile Section -->
     <section class="container hero" id="about">
       <div class="hero-img-wrap">
-        <img src="image_12.png" alt="Emmanuel Kyei in Green Suit">
+        <!-- Replace src="profile.jpg" with your image URL or uploaded filename -->
+        <img src="profile.jpg" onerror="this.src='https://placehold.co/600x800/161c26/d8b45a?text=Emmanuel+Kyei'" alt="Emmanuel Kyei Profile">
       </div>
       <div>
         <span class="eyebrow">Professional Portfolio</span>
@@ -249,28 +251,28 @@
         </div>
         <div class="gallery-grid">
           <div class="gallery-card">
-            <img src="image_9.png" alt="Adele Studio Pencil Sketch">
+            <img src="art-1.jpg" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Pencil+Studio+Portrait'" alt="Portraiture Studio">
             <div class="gallery-info">
               <h3>Portraiture Studio</h3>
               <p>Hyper-realistic pencil portrait work executed on large-format canvas with meticulous detail.</p>
             </div>
           </div>
           <div class="gallery-card">
-            <img src="image_7.png" alt="Adele Profile Drawing">
+            <img src="art-2.jpg" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Graphite+%26+Charcoal+Details'" alt="Fine Details & Form">
             <div class="gallery-info">
               <h3>Fine Details & Form</h3>
               <p>Precision graphite and charcoal studies focused on shading, lighting, and proportion.</p>
             </div>
           </div>
           <div class="gallery-card">
-            <img src="image_8.png" alt="Realistic Pencil Portrait">
+            <img src="art-3.jpg" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Realism+Studies'" alt="Realism Studies">
             <div class="gallery-info">
               <h3>Realism Studies</h3>
               <p>Technical drawing exploring human expression, textures, and depth.</p>
             </div>
           </div>
           <div class="gallery-card">
-            <img src="image_6.png" alt="Wall Design and Skyline Mural">
+            <img src="art-4.jpg" onerror="this.src='https://placehold.co/600x600/161c26/d8b45a?text=Architectural+Mural'" alt="Architectural Art & Murals">
             <div class="gallery-info">
               <h3>Architectural Art & Murals</h3>
               <p>Custom graphic wall installations, interior art design, and custom brand murals.</p>
@@ -291,7 +293,7 @@
           <!-- Quantitative Finance -->
           <div class="p-card">
             <div>
-              <img src="image_13.png" alt="Trading Terminal and Desk Setup">
+              <img src="trading-setup.jpg" onerror="this.src='https://placehold.co/600x400/161c26/d8b45a?text=Quantitative+Finance+Terminal'" alt="Trading Terminal Setup">
               <span class="eyebrow">Rickylove FX</span>
               <h3>Quantitative Finance</h3>
               <p>Research-driven analysis centered on XAUUSD, market structure, liquidity dynamics, and algorithmic risk control.</p>
@@ -306,7 +308,7 @@
           <!-- System Architecture -->
           <div class="p-card" id="systems">
             <div>
-              <img src="image_10.png" alt="Emmanuel Kyei at Workstation">
+              <img src="workstation.jpg" onerror="this.src='https://placehold.co/600x400/161c26/d8b45a?text=System+Architecture+Workstation'" alt="System Engineering Workstation">
               <span class="eyebrow">Systems Engineering</span>
               <h3>System Architecture</h3>
               <p>Designing algorithmic systems, rule-based execution models, and automated strategies in MQL5 & Python.</p>
@@ -379,4 +381,3 @@
   </script>
 </body>
 </html>
-

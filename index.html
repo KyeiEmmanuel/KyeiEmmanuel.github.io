@@ -1,25 +1,382 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Emmanuel Kyei (Rickylove) — Artist, Quantitative Finance & System Architect."><title>Emmanuel Kyei — Artist, Quantitative Finance & System Architect</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet"><style>
-:root{--bg:#090b0f;--card:#11151c;--card2:#161b23;--line:#ffffff17;--text:#f5f2ea;--muted:#9ca0aa;--gold:#d8b45a;--gold2:#f0d99a;--sans:'DM Sans',sans-serif;--display:'Manrope',sans-serif;--serif:'Playfair Display',serif;--max:1240px}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:radial-gradient(circle at 78% 10%,#d8b45a12,transparent 30rem),var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;overflow-x:hidden}body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#fff2 1px,transparent 1px);background-size:5px 5px}a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 48px));margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:'';width:28px;height:1px;background:var(--gold)}h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.04em}.serif{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--gold)}p{color:var(--muted)}
-header{position:fixed;z-index:1000;inset:0 0 auto;background:#090b0fcc;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.head{height:78px;display:flex;align-items:center;justify-content:space-between}.logo{font-family:var(--display);font-size:.88rem;font-weight:800;letter-spacing:.06em}.logo b{color:var(--gold)}nav{display:flex;gap:28px;align-items:center}nav a{font-size:.78rem;color:#b9bdc5;font-weight:600}nav a:hover{color:#fff}.connect{border:1px solid var(--gold);padding:9px 15px!important;color:var(--gold)!important}.connect:hover{background:var(--gold);color:#090b0f!important}.menu{display:none;background:none;border:1px solid var(--line);color:#fff;padding:8px 11px}
-.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:145px 0 85px}.hero h1{font-size:clamp(3.4rem,7vw,7.2rem);margin:23px 0 28px}.hero h1 span{display:block}.lead{font-size:1.1rem;max-width:620px;line-height:1.8;margin-bottom:32px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;padding:13px 19px;border:1px solid #fff2;font-size:.8rem;font-weight:700;transition:.25s}.primary{background:var(--gold);border-color:var(--gold);color:#0a0b0e}.primary:hover{background:var(--gold2)}.secondary:hover{border-color:var(--gold);background:var(--card2)}
-.visual{height:560px;display:grid;place-items:center;position:relative}.orbit{position:absolute;width:min(39vw,510px);aspect-ratio:1;border:1px solid #d8b45a33;border-radius:50%;transform:rotate(-18deg)}.orbit:before,.orbit:after{content:'';position:absolute;border:1px solid #fff12;border-radius:50%}.orbit:before{inset:12%}.orbit:after{inset:25%}.dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 24px #d8b45a99}.d1{top:9%;left:53%}.d2{right:8%;bottom:20%}.d3{left:12%;bottom:32%}.vcard{position:relative;width:min(92%,435px);padding:24px;background:linear-gradient(145deg,#1b2029f2,#0d1015f2);border:1px solid #fff20;box-shadow:0 30px 90px #0008}.vtop{display:flex;justify-content:space-between;color:var(--muted);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase}.signal{color:var(--gold);font-weight:700}.chart{width:100%;height:220px;margin:20px 0 5px}.g{stroke:#fff12;stroke-width:1}.line{fill:none;stroke:var(--gold);stroke-width:2.5}.area{fill:url(#a)}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:15px}.metric{border-top:1px solid var(--line);padding-top:11px}.metric small{display:block;color:var(--muted);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em}.metric strong{font-family:var(--display)}
-.statement{border-block:1px solid var(--line);padding:62px 0}.statement .inner{display:grid;grid-template-columns:.65fr 1.35fr;gap:60px}.statement h2{font-size:clamp(2rem,4vw,3.5rem)}.statement p{max-width:760px;margin-top:20px}
-section.section{padding:115px 0;border-bottom:1px solid var(--line)}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:50px}.sectionhead h2{font-size:clamp(2.3rem,5vw,4.3rem);max-width:750px;margin-top:16px}.sectionhead>p{max-width:430px}.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}.portrait{min-height:480px;border:1px solid var(--line);background:radial-gradient(circle at 60% 35%,#d8b45a2b,transparent 17rem),repeating-linear-gradient(135deg,#fff06 0 1px,transparent 1px 14px);position:relative;overflow:hidden}.portrait:after{content:'R';position:absolute;right:-25px;bottom:-95px;font:25rem var(--serif);color:#d8b45a0b}.about h3{font-size:1.5rem;margin-bottom:17px}.about p{margin-bottom:18px}.sig{font:2rem var(--serif);color:var(--gold);margin-top:32px}.sig small{display:block;font:700 .62rem var(--sans);letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
-.artgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.stack{display:grid;gap:18px}.tile{position:relative;min-height:440px;border:1px solid var(--line);overflow:hidden;background:var(--card)}.small{min-height:211px}.artbg{position:absolute;inset:0;background:radial-gradient(circle at 62% 34%,#d8b45a45,transparent 18%),radial-gradient(circle at 35% 65%,#fff12,transparent 25%),linear-gradient(135deg,#181d25,#080a0d 72%)}.artbg:before{content:'';position:absolute;width:230px;height:310px;border:1px solid #fff2;left:50%;top:50%;transform:translate(-50%,-50%) rotate(7deg)}.artbg:after{content:'';position:absolute;width:145px;height:205px;border:1px solid #d8b45a66;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg)}.tile:nth-child(2) .artbg{filter:hue-rotate(35deg)}.tile:nth-child(3) .artbg{filter:grayscale(.4)}.tilecopy{position:absolute;left:25px;right:25px;bottom:22px}.tilecopy span{color:var(--gold);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase}.tilecopy h3{font-size:1.5rem;margin-top:5px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.box{background:var(--bg);padding:30px;min-height:255px;position:relative}.box:hover{background:var(--card)}.num{color:var(--gold);font:700 .68rem var(--display);letter-spacing:.16em}.box h3{font-size:1.35rem;margin:62px 0 10px}.box p{font-size:.9rem}.arrow{position:absolute;right:27px;top:27px;color:var(--gold)}
-.work{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.workcard{background:var(--card);border:1px solid var(--line);padding:30px;min-height:270px;position:relative}.workcard:hover{border-color:#d8b45a55}.type{color:var(--gold);font-size:.64rem;font-weight:700;letter-spacing:.16em}.workcard h3{font-size:1.65rem;margin:18px 0 12px}.view{position:absolute;bottom:27px;font-size:.76rem;font-weight:700;color:#d8dbe0}.research{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{padding:32px;background:linear-gradient(145deg,#d8b45a0b,#fff01);border:1px solid var(--line)}.panel h3{font-size:1.5rem;margin:15px 0}.panel ul{list-style:none}.panel li{padding:11px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:.88rem}.panel li:last-child{border:0}
-.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}.contact h2{font-size:clamp(3rem,7vw,6.5rem);margin:18px 0}.contact p{font-size:1.04rem;max-width:580px}.links{display:grid;gap:12px}.link{padding:20px;background:var(--card);border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.link:hover{border-color:var(--gold);transform:translateX(4px)}.link small{display:block;color:var(--muted);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase}.link strong{font-size:.86rem}.link>span{color:var(--gold)}footer{border-top:1px solid var(--line);padding:35px 0 45px}.foot{display:flex;justify-content:space-between;align-items:center;gap:25px}.fbrand{font:800 .86rem var(--display)}.fbrand b{color:var(--gold)}.fnote{font-size:.7rem;color:var(--muted)}.flinks{display:flex;gap:20px;font-size:.72rem;color:var(--muted)}
-.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.show{opacity:1;transform:none}@media(max-width:900px){nav{display:none}.menu{display:block}nav.open{display:flex;position:absolute;top:78px;left:0;right:0;padding:20px 24px;background:#090b0ff7;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.hero,.about,.contact,.statement .inner{grid-template-columns:1fr}.hero{padding-top:130px}.visual{height:430px}.orbit{width:430px}.grid3{grid-template-columns:1fr}.box{min-height:210px}.box h3{margin-top:48px}}@media(max-width:650px){.container{width:calc(100% - 30px)}section.section{padding:82px 0}.sectionhead{display:block;margin-bottom:38px}.sectionhead>p{margin-top:18px}.hero h1{font-size:clamp(3rem,14vw,4.7rem)}.visual{height:350px}.orbit{width:330px}.artgrid,.work,.research{grid-template-columns:1fr}.tile,.small{min-height:320px}.foot{flex-direction:column;align-items:flex-start}.flinks{flex-wrap:wrap}}
-</style></head><body>
-<header><div class="container head"><a class="logo" href="#home"><b>EK</b> / EMMANUEL KYEI</a><nav id="nav"><a href="#about">About</a><a href="#art">Art</a><a href="#markets">Markets</a><a href="#systems">Systems</a><a href="#work">Work</a><a class="connect" href="#contact">Connect</a></nav><button class="menu" id="menu">MENU</button></div></header>
-<main id="home">
-<section class="hero container"><div class="reveal"><span class="eyebrow">EMMANUEL KYEI · RICKYLOVE</span><h1>Artist.<br><span>Quantitative Finance.</span><span class="serif">System Architect.</span></h1><p class="lead">A personal practice built around observation, precision and the search for structure — expressed through visual art, financial markets and quantitative thinking.</p><div class="actions"><a class="btn primary" href="#art">Explore the work ↗</a><a class="btn secondary" href="#about">Discover the story</a></div></div><div class="visual reveal"><div class="orbit"></div><i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><div class="vcard"><div class="vtop"><span>Observation / Structure / Process</span><span class="signal">RICKYLOVE</span></div><svg class="chart" viewBox="0 0 420 220" preserveAspectRatio="none"><defs><linearGradient id="a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8b45a" stop-opacity=".22"/><stop offset="1" stop-color="#d8b45a" stop-opacity="0"/></linearGradient></defs><g><line class="g" x1="0" y1="40" x2="420" y2="40"/><line class="g" x1="0" y1="90" x2="420" y2="90"/><line class="g" x1="0" y1="140" x2="420" y2="140"/><line class="g" x1="0" y1="190" x2="420" y2="190"/></g><path class="area" d="M0 174 L30 154 L58 162 L84 124 L110 137 L140 96 L168 113 L196 79 L223 96 L252 65 L280 79 L309 49 L333 63 L359 40 L386 54 L420 20 L420 220 L0 220Z"/><path class="line" d="M0 174 L30 154 L58 162 L84 124 L110 137 L140 96 L168 113 L196 79 L223 96 L252 65 L280 79 L309 49 L333 63 L359 40 L386 54 L420 20"/></svg><div class="metrics"><div class="metric"><small>Mindset</small><strong>Observe</strong></div><div class="metric"><small>Method</small><strong>Refine</strong></div></div></div></div></section>
-<section class="statement"><div class="container inner reveal"><span class="eyebrow">THE CORE IDEA</span><div><h2>Creativity and logic are not opposites. <span class="serif">They are tools.</span></h2><p>Whether I am studying a face on paper or studying behaviour in a market, the process begins the same way: observe carefully, identify structure, develop a process, and keep refining it.</p></div></div></section>
-<section id="about" class="section"><div class="container"><div class="sectionhead reveal"><div><span class="eyebrow">01 · ABOUT</span><h2>A multidisciplinary practice with <span class="serif">one mindset.</span></h2></div><p>Emmanuel Kyei, professionally known as Rickylove, works across visual art, financial-market research and systematic thinking.</p></div><div class="about"><div class="portrait reveal"></div><div class="reveal"><h3>From the studio to the market.</h3><p>My creative journey began through Rickylove Art, where drawing taught me the value of observation, proportion, composition and detail. Over time, those habits of looking closely naturally carried into financial markets.</p><p>Through Rickylove FX, I study price action, market structure, liquidity, volatility and risk. My interest in quantitative finance grows from the same desire: turning observation into a clearer framework for understanding complex systems.</p><p>This website brings those worlds together — not as separate identities, but as different expressions of the same approach to learning, creating and solving problems.</p><div class="sig">Rickylove<small>Emmanuel Kyei</small></div></div></div></div></section>
-<section id="art" class="section"><div class="container"><div class="sectionhead reveal"><div><span class="eyebrow">02 · RICKYLOVE ART</span><h2>Where observation <span class="serif">becomes creation.</span></h2></div><p>Realistic portraiture, pencil work and visual experiments shaped by patience, precision and attention to detail.</p></div><div class="artgrid"><a class="tile reveal" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener"><div class="artbg"></div><div class="tilecopy"><span>Featured direction</span><h3>Portraits & Pencil Work ↗</h3></div></a><div class="stack"><a class="tile small reveal" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener"><div class="artbg"></div><div class="tilecopy"><span>Visual studies</span><h3>Light · Form · Detail</h3></div></a><a class="tile small reveal" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener"><div class="artbg"></div><div class="tilecopy"><span>Creative archive</span><h3>Experiments & Design ↗</h3></div></a></div></div></div></section>
-<section id="markets" class="section"><div class="container"><div class="sectionhead reveal"><div><span class="eyebrow">03 · RICKYLOVE FX</span><h2>Financial markets through a <span class="serif">research lens.</span></h2></div><p>Focused primarily on XAUUSD and on developing a disciplined way to study market behaviour, risk and systematic decision-making.</p></div><div class="grid3 reveal"><article class="box"><span class="num">01 / MARKET</span><span class="arrow">↗</span><h3>Market Structure</h3><p>Price action, liquidity, trend and range behaviour, volatility and changing market regimes.</p></article><article class="box"><span class="num">02 / RISK</span><span class="arrow">↗</span><h3>Risk Management</h3><p>Position sizing, downside control and the discipline required to protect capital while testing ideas.</p></article><article class="box"><span class="num">03 / PROCESS</span><span class="arrow">↗</span><h3>Systematic Thinking</h3><p>Turning observations into explicit rules that can be evaluated, tested and improved.</p></article></div></div></section>
-<section id="systems" class="section"><div class="container"><div class="sectionhead reveal"><div><span class="eyebrow">04 · QUANTITATIVE FINANCE</span><h2>Building toward <span class="serif">system architecture.</span></h2></div><p>Quantitative finance is the direction I am developing toward — combining market research, statistics, probability, modelling and software into robust systems.</p></div><div class="research"><article class="panel reveal"><span class="eyebrow">RESEARCH</span><h3>Areas of interest</h3><ul><li>Probability & statistical reasoning</li><li>Quantitative research methodology</li><li>Backtesting & robustness</li><li>Market regimes & volatility</li><li>Risk engines & systematic decision rules</li></ul></article><article class="panel reveal"><span class="eyebrow">DIRECTION</span><h3>System architecture</h3><ul><li>Systematic trading frameworks</li><li>Algorithmic execution & MQL5</li><li>Portfolio and risk architecture</li><li>Advanced statistical modelling</li><li>Machine learning & financial engineering</li></ul></article></div></div></section>
-<section id="work" class="section"><div class="container"><div class="sectionhead reveal"><div><span class="eyebrow">05 · SELECTED WORK</span><h2>Ideas, studies and <span class="serif">creative projects.</span></h2></div><p>A growing body of work across art, market research and systematic experimentation.</p></div><div class="work"><article class="workcard reveal"><span class="type">TRADING RESEARCH</span><h3>Systematic Strategy Research</h3><p>Exploring rule-based trading ideas, testing methodology, risk architecture and the difference between a promising result and a robust one.</p><span class="view">Research project · In development</span></article><article class="workcard reveal"><span class="type">CREATIVE ARCHIVE</span><h3>Rickylove Art</h3><p>A visual archive of realistic pencil portraits, studies and creative experiments developed through years of observation and practice.</p><a class="view" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener">View portfolio ↗</a></article><article class="workcard reveal"><span class="type">SYSTEM THINKING</span><h3>Quantitative Frameworks</h3><p>Organising ideas around signal, noise, probability, robustness, risk and process — with the goal of turning intuition into testable research.</p><span class="view">Framework · Ongoing</span></article><article class="workcard reveal"><span class="type">MARKET IDENTITY</span><h3>Rickylove FX</h3><p>A market-focused identity centred on research, disciplined analysis and education rather than signals, hype or promises.</p><span class="view">Market research · Ongoing</span></article></div></div></section>
-<section id="contact" class="section"><div class="container contact"><div class="reveal"><span class="eyebrow">06 · CONTACT</span><h2>Let’s make<br><span class="serif">something meaningful.</span></h2><p>For creative collaborations, professional opportunities, research conversations or simply to connect, you are welcome to reach out.</p></div><div class="links reveal"><a class="link" href="mailto:KyeiEmma.9450@gmail.com"><div><small>Email</small><strong>KyeiEmma.9450@gmail.com</strong></div><span>↗</span></a><a class="link" href="https://wa.me/233200006731" target="_blank" rel="noopener"><div><small>WhatsApp</small><strong>+233 20 000 6731</strong></div><span>↗</span></a><a class="link" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener"><div><small>Instagram</small><strong>@rickylove_art</strong></div><span>↗</span></a><a class="link" href="https://github.com/KyeiEmmanuel" target="_blank" rel="noopener"><div><small>GitHub</small><strong>KyeiEmmanuel</strong></div><span>↗</span></a></div></div></section></main>
-<footer><div class="container foot"><div><div class="fbrand"><b>EK</b> / EMMANUEL KYEI</div><div class="fnote">Artist · Quantitative Finance · System Architect</div></div><div class="flinks"><a href="#about">About</a><a href="#art">Art</a><a href="#markets">Markets</a><a href="#systems">Systems</a><a href="#contact">Contact</a></div><div class="fnote">© 2026 Emmanuel Kyei</div></div></footer>
-<script>const m=document.getElementById('menu'),n=document.getElementById('nav');m.onclick=()=>n.classList.toggle('open');n.querySelectorAll('a').forEach(a=>a.onclick=()=>n.classList.remove('open'));const o=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('show')),{threshold:.1});document.querySelectorAll('.reveal').forEach(x=>o.observe(x));</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Emmanuel Kyei — Visual Artist, Quantitative Finance & System Architect.">
+  <title>Emmanuel Kyei — Brand Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080a0d;
+      --card: #11151c;
+      --card2: #161c26;
+      --line: rgba(255,255,255,0.1);
+      --text: #f4f5f7;
+      --muted: #9ca3af;
+      --gold: #d8b45a;
+      --gold-hover: #e0c273;
+      --sans: 'DM Sans', sans-serif;
+      --display: 'Manrope', sans-serif;
+      --serif: 'Playfair Display', serif;
+      --max: 1200px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+    
+    .container { width: min(var(--max), calc(100% - 48px)); margin: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .eyebrow:before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+    
+    h1, h2, h3 { font-family: var(--display); line-height: 1.15; letter-spacing: -0.03em; }
+    .serif { font-family: var(--serif); font-style: italic; color: var(--gold); }
+    p { color: var(--muted); font-size: 1rem; }
+
+    /* Header */
+    header {
+      position: fixed;
+      z-index: 1000;
+      inset: 0 0 auto;
+      background: rgba(8, 10, 13, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .head { height: 74px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--display); font-size: 0.95rem; font-weight: 800; letter-spacing: 0.05em; }
+    .logo b { color: var(--gold); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { font-size: 0.82rem; color: var(--muted); font-weight: 600; transition: 0.2s; }
+    nav a:hover { color: #fff; }
+    .connect { border: 1px solid var(--gold); padding: 8px 16px !important; color: var(--gold) !important; border-radius: 4px; }
+    .connect:hover { background: var(--gold); color: var(--bg) !important; }
+    .menu { display: none; background: none; border: 1px solid var(--line); color: #fff; padding: 6px 12px; font-size: 0.8rem; }
+
+    /* Hero Section */
+    .hero {
+      padding-top: 150px;
+      padding-bottom: 90px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-img-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    .hero-img-wrap img { width: 100%; height: 580px; object-fit: cover; object-position: top center; }
+    .hero h1 { font-size: clamp(2.5rem, 4.5vw, 4rem); margin: 16px 0 20px; }
+    .bio-text { font-size: 1.05rem; line-height: 1.7; margin-bottom: 28px; }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 4px;
+      transition: 0.25s;
+    }
+    .btn-primary { background: var(--gold); color: var(--bg); }
+    .btn-primary:hover { background: var(--gold-hover); }
+    .btn-secondary { border: 1px solid var(--line); color: var(--text); background: var(--card); }
+    .btn-secondary:hover { border-color: var(--gold); }
+
+    /* Sections General */
+    section.section { padding: 100px 0; border-bottom: 1px solid var(--line); }
+    .section-head { margin-bottom: 48px; }
+    .section-head h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-top: 10px; }
+
+    /* Art Gallery Section */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .gallery-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .gallery-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .gallery-card img { width: 100%; height: 360px; }
+    .gallery-info { padding: 20px; }
+    .gallery-info h3 { font-size: 1.2rem; margin-bottom: 6px; }
+    .gallery-info p { font-size: 0.88rem; }
+
+    /* Professional Divisions (Finance & Systems) */
+    .p-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .p-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .p-card img { border-radius: 6px; margin-bottom: 20px; height: 220px; }
+    .p-card h3 { font-size: 1.6rem; margin: 12px 0; }
+    .p-card p { font-size: 0.95rem; margin-bottom: 20px; }
+    .p-list { list-style: none; margin-top: 12px; }
+    .p-list li {
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Contact */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .contact-links { display: grid; gap: 14px; }
+    .contact-item {
+      padding: 18px 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.2s;
+    }
+    .contact-item:hover { border-color: var(--gold); transform: translateX(4px); }
+    .contact-item small { display: block; color: var(--muted); font-size: 0.7rem; text-transform: uppercase; }
+    .contact-item strong { font-size: 0.95rem; }
+
+    /* Footer */
+    footer { padding: 40px 0; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); }
+    .foot-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+
+    /* Responsive */
+    @media (max-width: 868px) {
+      nav { display: none; }
+      .menu { display: block; }
+      nav.open {
+        display: flex;
+        position: absolute;
+        top: 74px;
+        left: 0; right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero, .p-grid, .contact-wrapper { grid-template-columns: 1fr; }
+      .hero-img-wrap img { height: 420px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container head">
+      <a class="logo" href="#home"><b>EK</b> / EMMANUEL KYEI</a>
+      <nav id="nav">
+        <a href="#about">About</a>
+        <a href="#gallery">Art Gallery</a>
+        <a href="#finance">Quantitative Finance</a>
+        <a href="#systems">System Architecture</a>
+        <a class="connect" href="#contact">Contact</a>
+      </nav>
+      <button class="menu" id="menu">MENU</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero / Profile Section -->
+    <section class="container hero" id="about">
+      <div class="hero-img-wrap">
+        <img src="image_12.png" alt="Emmanuel Kyei in Green Suit">
+      </div>
+      <div>
+        <span class="eyebrow">Professional Portfolio</span>
+        <h1>Emmanuel Kyei <span class="serif">(Rickylove)</span></h1>
+        <p class="bio-text">
+          A multi-disciplinary professional bridging fine art, financial engineering, and quantitative system architecture. Grounded in meticulous observation, mathematical rigor, and structural design, I construct precision visual art while engineering systematic models for complex market environments.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#gallery">Explore Art Gallery</a>
+          <a class="btn btn-secondary" href="#finance">Finance & Systems</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Art Gallery Section -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">01 · Visual Practice</span>
+          <h2>Art Gallery & Design Studio</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="image_9.png" alt="Adele Studio Pencil Sketch">
+            <div class="gallery-info">
+              <h3>Portraiture Studio</h3>
+              <p>Hyper-realistic pencil portrait work executed on large-format canvas with meticulous detail.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="image_7.png" alt="Adele Profile Drawing">
+            <div class="gallery-info">
+              <h3>Fine Details & Form</h3>
+              <p>Precision graphite and charcoal studies focused on shading, lighting, and proportion.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="image_8.png" alt="Realistic Pencil Portrait">
+            <div class="gallery-info">
+              <h3>Realism Studies</h3>
+              <p>Technical drawing exploring human expression, textures, and depth.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="image_6.png" alt="Wall Design and Skyline Mural">
+            <div class="gallery-info">
+              <h3>Architectural Art & Murals</h3>
+              <p>Custom graphic wall installations, interior art design, and custom brand murals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quantitative Finance & Systems Architecture Section -->
+    <section id="finance" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">02 · Technical Practice</span>
+          <h2>Quantitative Finance & Systems Architecture</h2>
+        </div>
+        <div class="p-grid">
+          <!-- Quantitative Finance -->
+          <div class="p-card">
+            <div>
+              <img src="image_13.png" alt="Trading Terminal and Desk Setup">
+              <span class="eyebrow">Rickylove FX</span>
+              <h3>Quantitative Finance</h3>
+              <p>Research-driven analysis centered on XAUUSD, market structure, liquidity dynamics, and algorithmic risk control.</p>
+            </div>
+            <ul class="p-list">
+              <li><span>Market Regimes</span> <strong>Liquidity & Volatility</strong></li>
+              <li><span>Risk Architecture</span> <strong>Capital Protection</strong></li>
+              <li><span>Statistical Testing</span> <strong>Backtesting Models</strong></li>
+            </ul>
+          </div>
+
+          <!-- System Architecture -->
+          <div class="p-card" id="systems">
+            <div>
+              <img src="image_10.png" alt="Emmanuel Kyei at Workstation">
+              <span class="eyebrow">Systems Engineering</span>
+              <h3>System Architecture</h3>
+              <p>Designing algorithmic systems, rule-based execution models, and automated strategies in MQL5 & Python.</p>
+            </div>
+            <ul class="p-list">
+              <li><span>Algorithmic Execution</span> <strong>MQL5 Expert Advisors</strong></li>
+              <li><span>Data Modeling</span> <strong>Time-Series Analysis</strong></li>
+              <li><span>Process Control</span> <strong>Systematic Frameworks</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container contact-wrapper">
+        <div>
+          <span class="eyebrow">03 · Connect</span>
+          <h2>Let's build together.</h2>
+          <p>Available for art commissions, quantitative research discussions, and system engineering inquiries.</p>
+        </div>
+        <div class="contact-links">
+          <a class="contact-item" href="mailto:KyeiEmma.9450@gmail.com">
+            <div>
+              <small>Email</small>
+              <strong>KyeiEmma.9450@gmail.com</strong>
+            </div>
+            <span>↗</span>
+          </a>
+          <a class="contact-item" href="https://wa.me/233200006731" target="_blank" rel="noopener">
+            <div>
+              <small>WhatsApp</small>
+              <strong>+233 20 000 6731</strong>
+            </div>
+            <span>↗</span>
+          </a>
+          <a class="contact-item" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener">
+            <div>
+              <small>Instagram</small>
+              <strong>@rickylove_art</strong>
+            </div>
+            <span>↗</span>
+          </a>
+          <a class="contact-item" href="https://github.com/KyeiEmmanuel" target="_blank" rel="noopener">
+            <div>
+              <small>GitHub</small>
+              <strong>KyeiEmmanuel</strong>
+            </div>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot-content">
+      <div><b>EK</b> / EMMANUEL KYEI</div>
+      <div>Visual Artist · Quantitative Finance · System Architect</div>
+      <div>© 2026 Emmanuel Kyei. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const m = document.getElementById('menu');
+    const n = document.getElementById('nav');
+    m.onclick = () => n.classList.toggle('open');
+    n.querySelectorAll('a').forEach(a => a.onclick = () => n.classList.remove('open'));
+  </script>
+</body>
+</html>
+

@@ -3,349 +3,2788 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#11120f">
-<meta name="description" content="Emmanuel Kyei — Artist, Quantitative Finance & System Architect. Rickylove Art and Rickylove FX.">
+
+<meta name="theme-color" content="#0b0c0e">
+<meta
+  name="description"
+  content="Emmanuel Kyei — Artist, Quantitative Finance & System Architect. Rickylove Art and Rickylove FX."
+>
+
 <title>Emmanuel Kyei — Artist · Quantitative Finance · System Architecture</title>
+
 <style>
+
+/* =========================================================
+   DESIGN SYSTEM
+========================================================= */
+
 :root{
-  --ink:#0b0c0e;
-  --ink-2:#141619;
-  --paper:#f4f1e9;
-  --paper-2:#eae6dc;
-  --line:rgba(255,255,255,.17);
-  --line-dark:rgba(17,18,15,.16);
-  --white:#fbfaf6;
-  --crimson:#9b1c24;
-  --crimson-dark:#5c0d12;
-  --gold:#d8b45a;
-  --muted:#a9aaa2;
+  --ink:#090a0b;
+  --ink-2:#111315;
+  --ink-3:#181b1e;
+
+  --paper:#f3f0e8;
+  --paper-2:#e8e4da;
+  --paper-3:#ddd8cc;
+
+  --white:#faf9f5;
+  --gold:#c9a85b;
+  --gold-light:#dfc782;
+
+  --graphite:#77786f;
+  --muted:#a7a89f;
+
+  --line-dark:rgba(9,10,11,.14);
+  --line-light:rgba(255,255,255,.14);
+
   --serif:Georgia,"Times New Roman",serif;
-  --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,
+         BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+
   --max:1440px;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%;object-fit:cover;}
-button{font:inherit}
-.container{width:min(calc(100% - 56px),var(--max));margin:auto}
-.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
-.serif{font-family:var(--serif);font-weight:400}
-.site-nav{
-  position:fixed;z-index:50;left:50%;top:18px;transform:translateX(-50%);
-  width:min(calc(100% - 36px),1360px);display:flex;align-items:center;justify-content:space-between;
-  padding:13px 16px 13px 20px;background:rgba(11,12,14,.88);backdrop-filter:blur(18px);
-  border:1px solid rgba(255,255,255,.15);border-radius:999px;color:var(--white)
-}
-.brand{font-family:var(--serif);font-size:20px;letter-spacing:.04em}
-.brand small{font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-left:8px}
-.navlinks{display:flex;gap:24px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
-.navlinks a{opacity:.8;transition:.25s}.navlinks a:hover{opacity:1;color:var(--gold)}
-.nav-cta{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 13px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;transition:.2s}
-.nav-cta:hover{background:var(--crimson);border-color:var(--crimson)}
 
-/* Hero Section with Vibrant Crimson Overlay */
-.hero{
-  min-height:100vh;position:relative;background:var(--crimson-dark);color:var(--white);overflow:hidden;
-  display:flex;align-items:flex-end;
+*{
+  box-sizing:border-box;
 }
-.hero-photo{position:absolute;inset:0;z-index:1}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:contrast(108%) brightness(95%)}
-.hero-photo:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(135deg, rgba(155,28,36,0.55) 0%, rgba(92,13,18,0.7) 50%, rgba(11,12,14,0.92) 100%),
-             linear-gradient(0deg, rgba(11,12,14,0.85) 0%, transparent 60%);
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.55;
+}
+
+body,
+button,
+a{
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+button{
+  font:inherit;
+}
+
+.container{
+  width:min(calc(100% - 56px),var(--max));
+  margin:auto;
+}
+
+.eyebrow{
+  font-size:9px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.gold{
+  color:var(--gold);
+}
+
+.serif{
+  font-family:var(--serif);
+  font-weight:400;
+}
+
+.mono{
+  font-family:var(--mono);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.site-nav{
+  position:fixed;
+  z-index:100;
+  left:50%;
+  top:18px;
+  transform:translateX(-50%);
+
+  width:min(calc(100% - 36px),1360px);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:13px 16px 13px 20px;
+
+  background:rgba(9,10,11,.78);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:999px;
+
+  color:var(--white);
+
+  box-shadow:
+    0 18px 60px rgba(0,0,0,.18);
+}
+
+.brand{
+  font-family:var(--serif);
+  font-size:19px;
+  letter-spacing:.03em;
+}
+
+.brand small{
+  font-family:var(--sans);
+  font-size:7px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-left:9px;
+}
+
+.navlinks{
+  display:flex;
+  gap:25px;
+  font-size:9px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+
+.navlinks a{
+  opacity:.72;
+  transition:.25s ease;
+}
+
+.navlinks a:hover{
+  opacity:1;
+  color:var(--gold-light);
+}
+
+.nav-cta{
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:999px;
+  padding:8px 14px;
+
+  font-size:8px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+
+  transition:.25s ease;
+}
+
+.nav-cta:hover{
+  background:var(--gold);
+  color:var(--ink);
+  border-color:var(--gold);
+}
+
+.menu{
+  display:none;
+  background:none;
+  border:0;
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+}
+
+
+/* =========================================================
+   HERO — COVER
+========================================================= */
+
+.hero{
+  min-height:100svh;
+  position:relative;
+  overflow:hidden;
+
+  background:#080909;
+  color:var(--white);
+
+  display:flex;
+  align-items:flex-end;
+}
+
+.hero-photo{
+  position:absolute;
+  inset:0;
+  z-index:1;
+}
+
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 22%;
+
+  filter:
+    contrast(106%)
+    brightness(92%)
+    saturate(82%);
+}
+
+/* Neutral cinematic treatment — NO RED */
+.hero-photo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7,8,9,.92) 0%,
+      rgba(7,8,9,.68) 35%,
+      rgba(7,8,9,.20) 72%,
+      rgba(7,8,9,.34) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(7,8,9,.92) 0%,
+      rgba(7,8,9,.18) 48%,
+      rgba(7,8,9,.05) 100%
+    );
+
   z-index:2;
 }
-.hero-frame{position:absolute;inset:34px;border:1px solid rgba(255,255,255,.2);pointer-events:none;z-index:3}
-.hero-copy{position:relative;z-index:4;padding:0 0 68px;width:min(100%,900px)}
-.hero-kicker{display:flex;gap:14px;align-items:center;margin-bottom:20px;color:#e2e0d8}
-.hero-kicker span:last-child{height:1px;width:52px;background:var(--gold)}
-.hero h1{font-size:clamp(52px,9vw,136px);line-height:.85;letter-spacing:-.05em;margin:0 0 25px;font-weight:700;text-transform:uppercase}
-.hero h1 em{display:block;color:var(--gold);font-style:italic;font-family:var(--serif);font-size:.48em;line-height:1.05;letter-spacing:-.01em;margin-top:14px;text-transform:none}
-.hero-meta{display:flex;gap:32px;align-items:flex-end;max-width:780px}
-.hero-intro{font-size:15px;line-height:1.7;color:#e8e6dd;max-width:520px;background:rgba(11,12,14,0.4);padding:16px 20px;border-left:2px solid var(--gold);backdrop-filter:blur(6px)}
-.hero-side{margin-left:auto;text-align:right;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#d0d1c8}
-.scroll{position:absolute;right:48px;bottom:42px;z-index:4;writing-mode:vertical-rl;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#d0d1c8}
 
-.section{padding:120px 0}
-.section.dark{background:var(--ink);color:var(--white)}
-.section-head{display:flex;justify-content:space-between;gap:40px;align-items:flex-end;margin-bottom:54px}
-.section-title{font-family:var(--serif);font-size:clamp(42px,6vw,86px);line-height:.92;letter-spacing:-.04em;margin:8px 0 0}
-.section-desc{max-width:430px;color:#676960;font-size:14px;line-height:1.8}
-.dark .section-desc{color:#c0c2b8}
-.gold{color:var(--gold)}
+/* subtle film grain */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:3;
+  pointer-events:none;
 
-.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
-.about-copy p{font-size:clamp(19px,2vw,28px);line-height:1.45;margin:0 0 24px;max-width:760px}
-.about-copy .small{font-size:14px;line-height:1.85;color:#62645c;max-width:650px}
-.about-photo{position:relative}
-.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 28%}
-.about-photo:before{content:"";position:absolute;inset:-16px 16px 16px -16px;border:1px solid var(--line-dark);z-index:0}
-.about-photo img{position:relative;z-index:1}
-.signature{margin-top:28px;font-family:var(--serif);font-style:italic;font-size:32px;color:var(--crimson)}
+  opacity:.045;
 
-.gallery-main{display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:stretch}
-.art-card{background:#ded9cc;position:relative;overflow:hidden;min-height:580px;border-radius:4px}
-.art-card img{width:100%;height:100%;object-fit:cover;object-position:center}
-.art-caption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:20px;align-items:end;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:60px 24px 20px}
-.art-caption strong{font-family:var(--serif);font-size:24px;font-weight:400}
-.art-caption span{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold)}
-.gallery-note{background:var(--ink-2);color:var(--white);padding:42px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:4px}
-.gallery-note h3{font-family:var(--serif);font-weight:400;font-size:38px;line-height:.98;margin:0 0 20px}
-.gallery-note p{color:#bfc0b8;font-size:13px;line-height:1.85}
-.number{font-size:11px;letter-spacing:.18em;color:var(--gold)}
-.gallery-future{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.future-card{min-height:170px;border:1px solid var(--line-dark);display:flex;align-items:flex-end;padding:16px;background:linear-gradient(135deg,#ece8de,#d8d2c5);border-radius:4px}
-
-.painting{background:#ebe7dc;color:var(--ink)}
-.paint-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
-.paint-card{background:#f7f4ec;border:1px solid var(--line-dark);padding:14px;border-radius:4px}
-.paint-visual{height:280px;overflow:hidden;background:#d8d2c5;border-radius:2px}
-.paint-visual img{width:100%;height:100%;object-fit:cover}
-.paint-card h3{font-family:var(--serif);font-size:26px;font-weight:400;margin:18px 4px 6px}
-.paint-card p{font-size:12px;line-height:1.75;color:#65665f;margin:0 4px 18px}
-.swatches{display:flex;gap:6px;margin:0 4px 4px}
-.swatch{width:28px;height:28px;border:1px solid rgba(0,0,0,.1);border-radius:2px}
-.paint-tag{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#76766d;margin:0 4px 12px}
-
-.quant-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;margin-bottom:65px}
-.quant-big{font-family:var(--serif);font-size:clamp(38px,5vw,68px);line-height:.98;letter-spacing:-.04em}
-.quant-copy{color:#c4c5bd;font-size:14px;line-height:1.9;max-width:650px}
-.quant-panels{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.panel{border:1px solid var(--line);background:var(--ink-2);padding:24px;border-radius:4px}
-.panel img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:2px;margin-bottom:18px}
-.panel-title{display:flex;justify-content:space-between;gap:20px;margin-bottom:15px}
-.panel-title h3{font-family:var(--serif);font-size:24px;font-weight:400;margin:0}
-.panel-title span{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
-
-.practice{background:var(--paper);color:var(--ink)}
-.practice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
-.practice-card{background:var(--paper);padding:30px;min-height:210px}
-.practice-card .n{font-size:10px;color:#7d7e76;letter-spacing:.15em}
-.practice-card h3{font-family:var(--serif);font-size:28px;font-weight:400;margin:30px 0 10px}
-.practice-card p{font-size:12px;color:#66675f;line-height:1.75;margin:0}
-
-.contact{background:var(--ink);color:var(--white);padding:100px 0 45px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end}
-.contact h2{font-family:var(--serif);font-size:clamp(48px,7vw,98px);line-height:.85;letter-spacing:-.05em;font-weight:400;margin:10px 0 30px}
-.contact-copy{color:#b9bab1;max-width:520px;font-size:14px;line-height:1.8}
-.contact-links{display:grid;gap:13px}
-.contact-link{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.15);padding:14px 0;font-size:13px;transition:.2s}
-.contact-link:hover{color:var(--gold);border-bottom-color:var(--gold)}
-.contact-link span:last-child{color:var(--gold)}
-.footer{margin-top:90px;padding-top:20px;border-top:1px solid rgba(255,255,255,.13);display:flex;justify-content:space-between;gap:20px;color:#7f8179;font-size:9px;letter-spacing:.15em;text-transform:uppercase}
-
-.menu{display:none;background:none;border:0;color:#fff;font-size:20px;cursor:pointer}
-@media(max-width:980px){
-  .navlinks{display:none}.menu{display:block}
-  .navlinks.open{display:flex;position:absolute;top:58px;left:0;right:0;background:var(--ink);padding:20px;border-radius:18px;flex-direction:column;gap:16px;border:1px solid var(--line)}
-  .hero-frame{inset:16px}.hero-copy{padding-bottom:45px}
-  .hero-meta{display:block}.hero-side{display:none}.scroll{display:none}
-  .about-grid,.gallery-main,.quant-intro,.quant-panels,.contact-grid{grid-template-columns:1fr}
-  .about-grid{gap:45px}.about-photo{max-width:620px}
-  .paint-grid{grid-template-columns:1fr 1fr}.practice-grid{grid-template-columns:1fr 1fr}
-  .gallery-note{min-height:300px}.art-card{min-height:460px}
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
+
+.hero-frame{
+  position:absolute;
+  inset:34px;
+
+  border:1px solid rgba(255,255,255,.15);
+
+  pointer-events:none;
+  z-index:4;
+}
+
+.hero-copy{
+  position:relative;
+  z-index:5;
+
+  padding:0 0 70px;
+
+  width:min(100%,980px);
+}
+
+.hero-kicker{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  margin-bottom:22px;
+
+  color:#d8d6cf;
+}
+
+.hero-kicker span:last-child{
+  display:block;
+  height:1px;
+  width:60px;
+  background:var(--gold);
+}
+
+.hero h1{
+  margin:0 0 28px;
+
+  font-size:clamp(54px,9.5vw,145px);
+  line-height:.82;
+  letter-spacing:-.065em;
+
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+.hero h1 em{
+  display:block;
+
+  margin-top:17px;
+
+  color:var(--gold-light);
+
+  font-family:var(--serif);
+  font-size:.31em;
+  line-height:1.05;
+  letter-spacing:-.01em;
+
+  font-style:italic;
+  text-transform:none;
+}
+
+.hero-meta{
+  display:flex;
+  align-items:flex-end;
+  gap:40px;
+
+  max-width:950px;
+}
+
+.hero-intro{
+  max-width:650px;
+
+  margin:0;
+
+  padding:17px 20px;
+
+  border-left:1px solid var(--gold);
+
+  background:rgba(5,6,7,.34);
+  backdrop-filter:blur(8px);
+
+  color:#e4e2db;
+
+  font-size:14px;
+  line-height:1.85;
+}
+
+.hero-side{
+  margin-left:auto;
+
+  min-width:160px;
+
+  text-align:right;
+
+  color:#c2c3bd;
+
+  font-size:8px;
+  letter-spacing:.18em;
+  line-height:1.9;
+  text-transform:uppercase;
+}
+
+.hero-location{
+  color:var(--gold);
+}
+
+.scroll{
+  position:absolute;
+  right:48px;
+  bottom:42px;
+
+  z-index:6;
+
+  writing-mode:vertical-rl;
+
+  font-size:8px;
+  letter-spacing:.23em;
+  text-transform:uppercase;
+
+  color:#c4c5bf;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section{
+  padding:125px 0;
+}
+
+.section.dark{
+  background:var(--ink);
+  color:var(--white);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:50px;
+
+  margin-bottom:58px;
+}
+
+.section-title{
+  margin:8px 0 0;
+
+  font-family:var(--serif);
+  font-size:clamp(43px,6vw,88px);
+
+  line-height:.9;
+  letter-spacing:-.045em;
+}
+
+.section-title i{
+  font-weight:400;
+}
+
+.section-desc{
+  max-width:450px;
+
+  color:#686a62;
+
+  font-size:13px;
+  line-height:1.85;
+}
+
+.dark .section-desc{
+  color:#b9bab3;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:90px;
+
+  align-items:center;
+}
+
+.about-copy p{
+  margin:0 0 25px;
+
+  max-width:760px;
+
+  font-size:clamp(20px,2vw,29px);
+  line-height:1.43;
+  letter-spacing:-.015em;
+}
+
+.about-copy .small{
+  max-width:670px;
+
+  color:#676961;
+
+  font-size:14px;
+  line-height:1.9;
+}
+
+.about-photo{
+  position:relative;
+}
+
+.about-photo::before{
+  content:"";
+
+  position:absolute;
+  inset:-18px 18px 18px -18px;
+
+  border:1px solid var(--line-dark);
+
+  z-index:0;
+}
+
+.about-photo::after{
+  content:"EMMANUEL KYEI";
+
+  position:absolute;
+
+  right:-26px;
+  bottom:22px;
+
+  writing-mode:vertical-rl;
+
+  font-family:var(--mono);
+  font-size:7px;
+  letter-spacing:.25em;
+
+  color:#77786f;
+}
+
+.about-photo img{
+  position:relative;
+  z-index:1;
+
+  width:100%;
+  aspect-ratio:4/5;
+
+  object-fit:cover;
+  object-position:center 28%;
+}
+
+.signature{
+  margin-top:32px;
+
+  color:var(--gold);
+
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:34px;
+}
+
+
+/* =========================================================
+   ART
+========================================================= */
+
+.gallery-main{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+
+  gap:22px;
+}
+
+.art-card{
+  position:relative;
+  overflow:hidden;
+
+  min-height:640px;
+
+  background:#191a1a;
+
+  border:1px solid rgba(255,255,255,.09);
+}
+
+.art-card img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:
+    transform .7s cubic-bezier(.2,.7,.2,1),
+    filter .5s ease;
+}
+
+.art-card:hover img{
+  transform:scale(1.035);
+  filter:brightness(1.05);
+}
+
+.art-caption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:20px;
+
+  padding:80px 26px 22px;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,.88)
+    );
+}
+
+.art-caption strong{
+  font-family:var(--serif);
+  font-size:25px;
+  font-weight:400;
+}
+
+.art-caption span{
+  font-size:8px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:var(--gold-light);
+}
+
+.gallery-note{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  padding:43px;
+
+  background:var(--ink-2);
+
+  border:1px solid var(--line-light);
+}
+
+.number{
+  color:var(--gold);
+
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:.18em;
+}
+
+.gallery-note h3{
+  margin:18px 0 20px;
+
+  font-family:var(--serif);
+  font-size:42px;
+  line-height:.96;
+  font-weight:400;
+}
+
+.gallery-note p{
+  color:#b9bab2;
+
+  font-size:13px;
+  line-height:1.9;
+}
+
+.gallery-future{
+  margin-top:22px;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.future-card{
+  min-height:175px;
+
+  display:flex;
+  align-items:flex-end;
+
+  padding:17px;
+
+  border:1px solid rgba(255,255,255,.14);
+
+  background:
+    linear-gradient(
+      135deg,
+      #242628,
+      #151718
+    );
+
+  color:#dddcd5;
+
+  font-family:var(--mono);
+  font-size:8px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   PAINTING / DECORATION
+========================================================= */
+
+.painting{
+  background:var(--paper);
+  color:var(--ink);
+}
+
+.paint-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:18px;
+}
+
+.paint-card{
+  background:#f8f5ee;
+
+  border:1px solid var(--line-dark);
+
+  padding:12px;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.paint-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 22px 50px rgba(0,0,0,.09);
+}
+
+.paint-visual{
+  position:relative;
+
+  height:310px;
+
+  overflow:hidden;
+
+  background:#d6d0c4;
+}
+
+.paint-visual img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:transform .7s ease;
+}
+
+.paint-card:hover .paint-visual img{
+  transform:scale(1.04);
+}
+
+.paint-overlay{
+  position:absolute;
+  inset:auto 0 0;
+
+  padding:45px 18px 14px;
+
+  color:white;
+
+  background:linear-gradient(
+    transparent,
+    rgba(0,0,0,.7)
+  );
+}
+
+.paint-overlay span{
+  font-family:var(--mono);
+  font-size:8px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+
+.paint-tag{
+  margin:19px 4px 8px;
+
+  color:#77786f;
+
+  font-family:var(--mono);
+  font-size:8px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+
+.paint-card h3{
+  margin:0 4px 7px;
+
+  font-family:var(--serif);
+  font-size:27px;
+  font-weight:400;
+}
+
+.paint-card p{
+  margin:0 4px 18px;
+
+  color:#676860;
+
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   COLOR PALETTE
+========================================================= */
+
+.palette{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  margin:0 4px 5px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(0,0,0,.08);
+}
+
+.palette-item{
+  min-height:64px;
+
+  display:flex;
+  align-items:flex-end;
+
+  padding:8px;
+
+  font-family:var(--mono);
+  font-size:7px;
+  letter-spacing:.08em;
+}
+
+.palette-item span{
+  mix-blend-mode:difference;
+  color:white;
+}
+
+.palette-ivory{
+  background:#f1ece1;
+  color:#555;
+}
+
+.palette-olive{
+  background:#33463b;
+  color:white;
+}
+
+.palette-stone{
+  background:#b9ad99;
+  color:#333;
+}
+
+.palette-brass{
+  background:#b69a5e;
+  color:#222;
+}
+
+
+/* =========================================================
+   QUANT SECTION
+========================================================= */
+
+.quant-intro{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+
+  gap:80px;
+
+  margin-bottom:65px;
+}
+
+.quant-big{
+  font-family:var(--serif);
+
+  font-size:clamp(40px,5vw,70px);
+
+  line-height:.97;
+  letter-spacing:-.045em;
+}
+
+.quant-copy{
+  max-width:660px;
+
+  color:#bfc0b9;
+
+  font-size:14px;
+  line-height:1.9;
+}
+
+
+/* Research dashboard */
+
+.quant-dashboard{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+
+  gap:18px;
+
+  margin-bottom:18px;
+}
+
+.quant-chart{
+  position:relative;
+
+  padding:25px;
+
+  min-height:480px;
+
+  background:#0f1113;
+
+  border:1px solid var(--line-light);
+}
+
+.chart-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+
+  margin-bottom:25px;
+}
+
+.chart-symbol{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.14em;
+}
+
+.chart-price{
+  margin-top:5px;
+
+  font-family:var(--serif);
+  font-size:30px;
+}
+
+.chart-status{
+  color:var(--gold);
+
+  font-family:var(--mono);
+  font-size:8px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.chart-area{
+  position:relative;
+
+  height:330px;
+
+  overflow:hidden;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.045) 1px,
+      transparent 1px
+    );
+
+  background-size:50px 50px;
+}
+
+/* SVG chart */
+.chart-svg{
+  width:100%;
+  height:100%;
+}
+
+.chart-legend{
+  display:flex;
+  gap:20px;
+
+  margin-top:15px;
+
+  font-family:var(--mono);
+  font-size:7px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+
+  color:#92948d;
+}
+
+.legend-line{
+  display:inline-block;
+
+  width:20px;
+  height:1px;
+
+  margin-right:6px;
+
+  vertical-align:middle;
+
+  background:var(--gold);
+}
+
+
+/* =========================================================
+   QUANT METRICS
+========================================================= */
+
+.quant-metrics{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:1px;
+
+  background:rgba(255,255,255,.11);
+
+  border:1px solid rgba(255,255,255,.11);
+}
+
+.metric{
+  padding:23px;
+
+  background:var(--ink-2);
+}
+
+.metric-label{
+  color:#7f817a;
+
+  font-family:var(--mono);
+  font-size:7px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.metric-value{
+  margin-top:10px;
+
+  font-family:var(--serif);
+  font-size:29px;
+
+  color:#eee;
+}
+
+
+/* =========================================================
+   SYSTEM ARCHITECTURE
+========================================================= */
+
+.system-panel{
+  margin-top:18px;
+
+  padding:28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111315,
+      #0b0c0e
+    );
+
+  border:1px solid var(--line-light);
+}
+
+.system-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+
+  margin-bottom:30px;
+}
+
+.system-head h3{
+  margin:5px 0 0;
+
+  font-family:var(--serif);
+  font-size:31px;
+  font-weight:400;
+}
+
+.system-status{
+  color:var(--gold);
+
+  font-family:var(--mono);
+  font-size:7px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.system-flow{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+
+.system-node{
+  position:relative;
+
+  min-height:105px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  padding:15px;
+
+  background:#16191b;
+
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.system-node:not(:last-child)::after{
+  content:"→";
+
+  position:absolute;
+
+  right:-12px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  z-index:2;
+
+  color:var(--gold);
+
+  font-family:var(--mono);
+  font-size:12px;
+}
+
+.node-number{
+  color:var(--gold);
+
+  font-family:var(--mono);
+  font-size:7px;
+}
+
+.node-title{
+  font-family:var(--serif);
+  font-size:18px;
+}
+
+.node-desc{
+  color:#83857f;
+
+  font-size:8px;
+  line-height:1.5;
+}
+
+
+/* =========================================================
+   PRACTICE
+========================================================= */
+
+.practice{
+  background:var(--paper);
+
+  color:var(--ink);
+}
+
+.practice-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:1px;
+
+  background:var(--line-dark);
+
+  border:1px solid var(--line-dark);
+}
+
+.practice-card{
+  min-height:220px;
+
+  padding:30px;
+
+  background:var(--paper);
+}
+
+.practice-card .n{
+  color:#7b7c74;
+
+  font-family:var(--mono);
+  font-size:8px;
+  letter-spacing:.15em;
+}
+
+.practice-card h3{
+  margin:30px 0 10px;
+
+  font-family:var(--serif);
+  font-size:28px;
+  font-weight:400;
+}
+
+.practice-card p{
+  margin:0;
+
+  color:#66675f;
+
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+  background:var(--ink);
+
+  color:var(--white);
+
+  padding:110px 0 45px;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:80px;
+
+  align-items:end;
+}
+
+.contact h2{
+  margin:10px 0 30px;
+
+  font-family:var(--serif);
+
+  font-size:clamp(50px,7vw,100px);
+
+  line-height:.84;
+  letter-spacing:-.055em;
+
+  font-weight:400;
+}
+
+.contact-copy{
+  max-width:530px;
+
+  color:#b8b9b1;
+
+  font-size:14px;
+  line-height:1.85;
+}
+
+.contact-links{
+  display:grid;
+  gap:10px;
+}
+
+.contact-link{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:20px;
+
+  padding:15px 0;
+
+  border-bottom:1px solid rgba(255,255,255,.13);
+
+  font-size:12px;
+
+  transition:.25s ease;
+}
+
+.contact-link:hover{
+  color:var(--gold-light);
+
+  border-color:var(--gold);
+}
+
+.contact-link span:last-child{
+  color:var(--gold);
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+
+  margin-top:90px;
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,.12);
+
+  color:#74766f;
+
+  font-family:var(--mono);
+  font-size:7px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+  .navlinks{
+    display:none;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .navlinks.open{
+    display:flex;
+
+    position:absolute;
+
+    top:58px;
+    left:0;
+    right:0;
+
+    padding:20px;
+
+    flex-direction:column;
+    gap:16px;
+
+    background:var(--ink);
+
+    border:1px solid var(--line-light);
+    border-radius:18px;
+  }
+
+  .hero-frame{
+    inset:16px;
+  }
+
+  .hero-copy{
+    padding-bottom:48px;
+  }
+
+  .hero-meta{
+    display:block;
+  }
+
+  .hero-side{
+    display:none;
+  }
+
+  .scroll{
+    display:none;
+  }
+
+  .about-grid,
+  .gallery-main,
+  .quant-intro,
+  .quant-dashboard,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-grid{
+    gap:50px;
+  }
+
+  .about-photo{
+    max-width:650px;
+  }
+
+  .paint-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .practice-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .system-flow{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .system-node:not(:last-child)::after{
+    display:none;
+  }
+
+  .gallery-note{
+    min-height:320px;
+  }
+}
+
+
 @media(max-width:620px){
-  .container{width:min(calc(100% - 30px),var(--max))}
-  .site-nav{width:calc(100% - 20px);top:10px}.brand small{display:none}
-  .hero{min-height:90vh}.hero h1{font-size:46px}.hero h1 em{font-size:24px}
-  .section{padding:75px 0}.section-head{display:block;margin-bottom:32px}
-  .section-desc{margin-top:16px}
-  .paint-grid,.practice-grid,.gallery-future{grid-template-columns:1fr}
-  .paint-visual{height:250px}.art-card{min-height:380px}
-  .gallery-note{padding:24px}
-  .panel{padding:18px}
-  .footer{display:block}.footer span{display:block;margin-top:9px}
+
+  .container{
+    width:min(calc(100% - 30px),var(--max));
+  }
+
+  .site-nav{
+    width:calc(100% - 20px);
+    top:10px;
+  }
+
+  .brand small{
+    display:none;
+  }
+
+  .hero{
+    min-height:92svh;
+  }
+
+  .hero h1{
+    font-size:47px;
+  }
+
+  .hero h1 em{
+    font-size:24px;
+  }
+
+  .hero-intro{
+    font-size:13px;
+  }
+
+  .section{
+    padding:78px 0;
+  }
+
+  .section-head{
+    display:block;
+
+    margin-bottom:35px;
+  }
+
+  .section-desc{
+    margin-top:18px;
+  }
+
+  .paint-grid,
+  .practice-grid,
+  .gallery-future,
+  .system-flow{
+    grid-template-columns:1fr;
+  }
+
+  .paint-visual{
+    height:260px;
+  }
+
+  .art-card{
+    min-height:430px;
+  }
+
+  .gallery-note{
+    padding:26px;
+  }
+
+  .gallery-note h3{
+    font-size:36px;
+  }
+
+  .quant-chart{
+    padding:16px;
+  }
+
+  .chart-area{
+    height:260px;
+  }
+
+  .system-panel{
+    padding:18px;
+  }
+
+  .footer{
+    display:block;
+  }
+
+  .footer span{
+    display:block;
+    margin-top:9px;
+  }
+
+  .contact-link{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:5px;
+  }
 }
+
 </style>
 </head>
+
+
 <body>
 
+
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
+
 <nav class="site-nav">
-  <a class="brand" href="#top">Emmanuel Kyei <small>Rickylove</small></a>
+
+  <a class="brand" href="#top">
+    Emmanuel Kyei
+    <small>Rickylove</small>
+  </a>
+
   <div class="navlinks" id="navlinks">
-    <a href="#about">About</a><a href="#art">Art</a><a href="#projects">Projects</a>
-    <a href="#quant">Quant</a><a href="#contact">Contact</a>
+    <a href="#about">Profile</a>
+    <a href="#art">Art</a>
+    <a href="#projects">Painting</a>
+    <a href="#quant">Quant</a>
+    <a href="#contact">Contact</a>
   </div>
-  <a class="nav-cta" href="#contact">Work / Connect</a>
-  <button class="menu" id="menu" aria-label="Open menu">☰</button>
+
+  <a class="nav-cta" href="#contact">
+    Work / Connect
+  </a>
+
+  <button
+    class="menu"
+    id="menu"
+    aria-label="Open menu"
+  >
+    ☰
+  </button>
+
 </nav>
 
+
+<!-- =======================================================
+     HERO — PERSONAL COVER
+======================================================= -->
+
 <header class="hero" id="top">
+
   <div class="hero-photo">
-    <img src="2905B819-A634-4575-869D-501E152D5F01.jpeg" onerror="this.src='https://placehold.co/1200x800/9b1c24/ffffff?text=Emmanuel+Kyei'" alt="Emmanuel Kyei — Rickylove">
+
+    <img
+      src="2905B819-A634-4575-869D-501E152D5F01.jpeg"
+      alt="Emmanuel Kyei"
+      onerror="this.style.display='none'"
+    >
+
   </div>
+
   <div class="hero-frame"></div>
+
   <div class="container">
+
     <div class="hero-copy">
-      <div class="hero-kicker"><span class="eyebrow">Artist · Quantitative Finance · System Architecture</span><span></span></div>
-      <h1>EMMANUEL<br>KYEI<em>Rickylove Art & FX</em></h1>
-      <div class="hero-meta">
-        <p class="hero-intro">A multidisciplinary practice shaped by observation, precision and systems thinking — bridging graphite portraiture with market structure and automated execution systems.</p>
-        <div class="hero-side">Accra · Ghana<br>Independent practice</div>
+
+      <div class="hero-kicker">
+
+        <span class="eyebrow">
+          Artist · Quantitative Finance · System Architecture
+        </span>
+
+        <span></span>
+
       </div>
+
+
+      <h1>
+
+        EMMANUEL<br>
+        KYEI
+
+        <em>
+          Rickylove Art · FX · Systems
+        </em>
+
+      </h1>
+
+
+      <div class="hero-meta">
+
+        <p class="hero-intro">
+
+          Emmanuel Kyei is an artist and quantitative system architect
+          working across visual art, spatial design and financial systems.
+          Under the name <strong>Rickylove</strong>, his work combines
+          creative precision with analytical thinking — from graphite
+          portraiture and painting projects to quantitative research and
+          automated trading systems.
+
+        </p>
+
+
+        <div class="hero-side">
+
+          <span class="hero-location">
+            Independent Practice
+          </span>
+
+          <br>
+
+          Ghana
+
+          <br>
+
+          Art · Design · Quant
+
+        </div>
+
+      </div>
+
     </div>
+
   </div>
-  <div class="scroll">Scroll to explore</div>
+
+
+  <div class="scroll">
+    Scroll to explore
+  </div>
+
 </header>
 
+
+<!-- =======================================================
+     PROFILE
+======================================================= -->
+
 <section class="section" id="about">
+
   <div class="container">
+
     <div class="section-head">
-      <div><div class="eyebrow">01 · The person behind the work</div><h2 class="section-title">A quiet eye.<br><i>Structured mind.</i></h2></div>
-      <div class="section-desc">The work moves between fine art portraiture and quantitative systems, connected by the same habit: study the structure before making the decision.</div>
+
+      <div>
+
+        <div class="eyebrow">
+          01 · Profile
+        </div>
+
+        <h2 class="section-title">
+          A visual eye.<br>
+          <i>A structured mind.</i>
+        </h2>
+
+      </div>
+
+
+      <div class="section-desc">
+
+        A personal practice built around observation,
+        precision and disciplined systems thinking —
+        expressed through art, spatial projects and
+        quantitative research.
+
+      </div>
+
     </div>
+
+
     <div class="about-grid">
+
+
       <div class="about-copy">
-        <p>Observation became the foundation. Art developed the eye for proportion, detail and composition; financial research developed the discipline to test ideas, measure uncertainty and build repeatable processes.</p>
-        <p class="small">Under the name <b>Emmanuel Kyei - (Rickylove)</b>, creative work and market work live side by side. The aim is not to force them into one category, but to let each sharpen the other.</p>
-        <div class="signature">Rickylove Art</div>
+
+        <p>
+          My work sits at the intersection of visual creativity
+          and systems thinking.
+        </p>
+
+        <p>
+          Through art, I developed an eye for proportion,
+          detail, composition and visual balance. Through
+          quantitative finance, I developed a different
+          discipline — researching ideas, measuring uncertainty
+          and building systems that can be tested and refined.
+        </p>
+
+        <p class="small">
+
+          <strong>Rickylove</strong> is the creative identity
+          through which these disciplines come together.
+          The work is intentionally diverse, but the underlying
+          standard remains the same: observe carefully,
+          structure clearly and refine relentlessly.
+
+        </p>
+
+        <div class="signature">
+          Rickylove
+        </div>
+
       </div>
+
+
       <div class="about-photo">
-        <img src="2905B819-A634-4575-869D-501E152D5F01.jpeg" onerror="this.src='https://placehold.co/600x750/141619/ffffff?text=Emmanuel+Kyei'" alt="Emmanuel Kyei portrait">
+
+        <img
+          src="2905B819-A634-4575-869D-501E152D5F01.jpeg"
+          alt="Emmanuel Kyei portrait"
+          onerror="this.style.display='none'"
+        >
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
+<!-- =======================================================
+     RICKYLOVE ART
+======================================================= -->
 
 <section class="section dark" id="art">
+
   <div class="container">
+
     <div class="section-head">
-      <div><div class="eyebrow">02 · Rickylove Art</div><h2 class="section-title">Selected<br><i>Work</i></h2></div>
-      <div class="section-desc">A growing collection of graphite portraits, charcoal studies and custom visual works.</div>
-    </div>
-    <div class="gallery-main">
-      <a class="art-card" href="IMG_2105.jpeg" target="_blank" rel="noopener">
-        <img src="IMG_2105.jpeg" onerror="this.src='https://placehold.co/800x1000/141619/d8b45a?text=Graphite+Portrait'" alt="Rickylove Art graphite portrait">
-        <div class="art-caption"><div><strong>Portrait Study I</strong><br><span>Graphite & Charcoal</span></div><span>View full work ↗</span></div>
-      </a>
-      <div class="gallery-note">
-        <div>
-          <div class="number">Collection / 001</div>
-          <h3>Precision<br>in graphite.</h3>
-          <p>A study of light, contour and expression. Each drawing is intentionally developed with structural realism and fine contrast shading.</p>
+
+      <div>
+
+        <div class="eyebrow">
+          02 · Rickylove Art
         </div>
-        <div class="eyebrow gold">More works coming</div>
+
+        <h2 class="section-title">
+          Drawn with<br>
+          <i>precision.</i>
+        </h2>
+
       </div>
+
+      <div class="section-desc">
+
+        Graphite portraiture, charcoal studies and
+        visual works focused on proportion, light,
+        expression and structural realism.
+
+      </div>
+
     </div>
+
+
+    <div class="gallery-main">
+
+
+      <a
+        class="art-card"
+        href="IMG_2105.jpeg"
+        target="_blank"
+        rel="noopener"
+      >
+
+        <img
+          src="IMG_2105.jpeg"
+          alt="Rickylove Art graphite portrait"
+          onerror="this.style.display='none'"
+        >
+
+        <div class="art-caption">
+
+          <div>
+
+            <strong>
+              Portrait Study I
+            </strong>
+
+            <br>
+
+            <span>
+              Graphite & Charcoal
+            </span>
+
+          </div>
+
+          <span>
+            View full work ↗
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <div class="gallery-note">
+
+        <div>
+
+          <div class="number">
+            COLLECTION / 001
+          </div>
+
+          <h3>
+            Precision<br>
+            in graphite.
+          </h3>
+
+          <p>
+
+            A study of light, contour and expression.
+            The drawing process focuses on proportion,
+            tonal structure and controlled contrast to
+            create realistic depth.
+
+          </p>
+
+        </div>
+
+
+        <div class="eyebrow gold">
+          More works coming
+        </div>
+
+      </div>
+
+    </div>
+
+
     <div class="gallery-future">
-      <div class="future-card"><span>02 · Charcoal Realism</span></div>
-      <div class="future-card"><span>03 · Proportion Study</span></div>
-      <div class="future-card"><span>04 · Custom Commission</span></div>
+
+      <div class="future-card">
+        02 · Charcoal Realism
+      </div>
+
+      <div class="future-card">
+        03 · Proportion Study
+      </div>
+
+      <div class="future-card">
+        04 · Custom Commission
+      </div>
+
     </div>
+
   </div>
+
 </section>
+
+
+<!-- =======================================================
+     PAINTING & SPATIAL DESIGN
+======================================================= -->
 
 <section class="section painting" id="projects">
+
   <div class="container">
+
     <div class="section-head">
-      <div><div class="eyebrow">03 · Painting & Spatial Projects</div><h2 class="section-title">Colour meets<br><i>space.</i></h2></div>
-      <div class="section-desc">Exterior and interior painting concepts presented as visual studies — clean surfaces, considered palettes and architectural direction.</div>
+
+      <div>
+
+        <div class="eyebrow">
+          03 · Painting & Spatial Design
+        </div>
+
+        <h2 class="section-title">
+          Colour meets<br>
+          <i>space.</i>
+        </h2>
+
+      </div>
+
+
+      <div class="section-desc">
+
+        Exterior and interior painting projects,
+        decorative direction and carefully developed
+        colour palettes for architectural spaces.
+
+      </div>
+
     </div>
+
+
     <div class="paint-grid">
-      <article class="paint-card">
-        <div class="paint-visual">
-          <img src="IMG_3378.jpeg" onerror="this.src='https://placehold.co/600x400/d7d1c4/11120f?text=Exterior+Concept'" alt="Exterior Architecture">
-        </div>
-        <div class="paint-tag">Exterior / concept 01</div>
-        <h3>Modern residence</h3>
-        <p>Warm mineral walls, deep green architectural accents and restrained stone tones for a quiet, premium exterior finish.</p>
-        <div class="swatches"><i class="swatch" style="background:#efeae0"></i><i class="swatch" style="background:#23362d"></i><i class="swatch" style="background:#b59a63"></i><i class="swatch" style="background:#b6ad9e"></i></div>
-      </article>
+
+
+      <!-- EXTERIOR -->
 
       <article class="paint-card">
+
         <div class="paint-visual">
-          <img src="IMG_0859.jpeg" onerror="this.src='https://placehold.co/600x400/ece7dd/11120f?text=Interior+Concept'" alt="Interior Living Space">
+
+          <img
+            src="IMG_3378.jpeg"
+            alt="Exterior painting project"
+            onerror="this.style.display='none'"
+          >
+
+          <div class="paint-overlay">
+            <span>
+              Exterior / Finish Direction
+            </span>
+          </div>
+
         </div>
-        <div class="paint-tag">Interior / concept 02</div>
-        <h3>Calm living space</h3>
-        <p>Soft ivory, botanical green and muted brass create an interior environment that feels composed and refined.</p>
-        <div class="swatches"><i class="swatch" style="background:#f7f3eb"></i><i class="swatch" style="background:#31483b"></i><i class="swatch" style="background:#b59a63"></i><i class="swatch" style="background:#8d7d66"></i></div>
+
+
+        <div class="paint-tag">
+          Exterior / Concept 01
+        </div>
+
+        <h3>
+          Modern residence
+        </h3>
+
+        <p>
+
+          A restrained architectural palette combining
+          warm mineral walls, deep natural tones and
+          subtle metallic accents for a premium exterior.
+
+        </p>
+
+
+        <div class="palette">
+
+          <div class="palette-item palette-ivory">
+            <span>IVORY</span>
+          </div>
+
+          <div class="palette-item palette-olive">
+            <span>OLIVE</span>
+          </div>
+
+          <div class="palette-item palette-stone">
+            <span>STONE</span>
+          </div>
+
+          <div class="palette-item palette-brass">
+            <span>BRASS</span>
+          </div>
+
+        </div>
+
       </article>
 
+
+      <!-- INTERIOR -->
+
       <article class="paint-card">
+
         <div class="paint-visual">
-          <img src="IMG_2533.jpeg" onerror="this.src='https://placehold.co/600x400/f5f1e8/11120f?text=Palette+Study'" alt="Palette Direction">
+
+          <img
+            src="IMG_0859.jpeg"
+            alt="Interior painting project"
+            onerror="this.style.display='none'"
+          >
+
+          <div class="paint-overlay">
+            <span>
+              Interior / Finish Direction
+            </span>
+          </div>
+
         </div>
-        <div class="paint-tag">Colour / direction 03</div>
-        <h3>Palette library</h3>
-        <p>A visual language for future architectural interiors, exteriors and creative project direction.</p>
-        <div class="swatches"><i class="swatch" style="background:#23362d"></i><i class="swatch" style="background:#b59a63"></i><i class="swatch" style="background:#d1c9ba"></i><i class="swatch" style="background:#8d7d66"></i></div>
+
+
+        <div class="paint-tag">
+          Interior / Concept 02
+        </div>
+
+        <h3>
+          Calm living space
+        </h3>
+
+        <p>
+
+          Soft neutrals, botanical greens and warm
+          architectural accents designed to create
+          a composed and refined interior environment.
+
+        </p>
+
+
+        <div class="palette">
+
+          <div class="palette-item palette-ivory">
+            <span>IVORY</span>
+          </div>
+
+          <div class="palette-item palette-olive">
+            <span>BOTANICAL</span>
+          </div>
+
+          <div class="palette-item palette-stone">
+            <span>EARTH</span>
+          </div>
+
+          <div class="palette-item palette-brass">
+            <span>BRASS</span>
+          </div>
+
+        </div>
+
       </article>
+
+
+      <!-- PALETTE -->
+
+      <article class="paint-card">
+
+        <div class="paint-visual">
+
+          <img
+            src="IMG_2533.jpeg"
+            alt="Architectural colour palette study"
+            onerror="this.style.display='none'"
+          >
+
+          <div class="paint-overlay">
+            <span>
+              Colour / Material Direction
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="paint-tag">
+          Colour / Direction 03
+        </div>
+
+        <h3>
+          Palette library
+        </h3>
+
+        <p>
+
+          A growing visual language for future
+          interiors, exteriors and decorative projects —
+          balancing natural tones with refined accents.
+
+        </p>
+
+
+        <div class="palette">
+
+          <div class="palette-item palette-olive">
+            <span>OLIVE</span>
+          </div>
+
+          <div class="palette-item palette-brass">
+            <span>BRASS</span>
+          </div>
+
+          <div class="palette-item palette-stone">
+            <span>STONE</span>
+          </div>
+
+          <div class="palette-item palette-ivory">
+            <span>IVORY</span>
+          </div>
+
+        </div>
+
+      </article>
+
     </div>
+
   </div>
+
 </section>
+
+
+<!-- =======================================================
+     QUANTITATIVE FINANCE
+======================================================= -->
 
 <section class="section dark" id="quant">
+
   <div class="container">
+
     <div class="section-head">
-      <div><div class="eyebrow">04 · Quantitative Finance & Systems</div><h2 class="section-title">Research the idea.<br><i>Engineer the process.</i></h2></div>
-      <div class="section-desc">Quantitative market research, technical scalping strategies for XAU/USD & BTC/USD, and algorithmic execution in MetaTrader 5 (MQL5).</div>
+
+      <div>
+
+        <div class="eyebrow">
+          04 · Quantitative Finance & Systems
+        </div>
+
+        <h2 class="section-title">
+          Research the idea.<br>
+          <i>Engineer the process.</i>
+        </h2>
+
+      </div>
+
+
+      <div class="section-desc">
+
+        Quantitative market research, systematic trading
+        research and automated execution architecture
+        across XAU/USD and digital assets.
+
+      </div>
+
     </div>
+
 
     <div class="quant-intro">
-      <div class="quant-big">Markets are not a story.<br><span class="gold">They are a system.</span></div>
-      <div class="quant-copy">The practice focuses on turning market observations into quantitative hypotheses, testing them against historical data, and building automated execution engines with dynamic risk controls.</div>
-    </div>
 
-    <div class="quant-panels">
-      <div class="panel">
-        <img src="5873CDC7-5B8B-45B1-B55B-E96FD02229C5.jpeg" onerror="this.src='https://placehold.co/600x400/141619/d8b45a?text=Market+Structure'" alt="Market Structure Analysis">
-        <div class="panel-title"><h3>Market structure study</h3><span>Rickylove FX</span></div>
-        <p style="font-size: 13px; color: #a9aaa2;">Volatility expansion, liquidity profiling, and risk management systems applied to gold and crypto markets.</p>
+      <div class="quant-big">
+
+        Markets are not a story.
+
+        <br>
+
+        <span class="gold">
+          They are a system.
+        </span>
+
       </div>
 
-      <div class="panel">
-        <img src="7F5DCFE8-5D70-430B-B444-BC4489360400.jpeg" onerror="this.src='https://placehold.co/600x400/141619/d8b45a?text=MQL5+Systems'" alt="Systems Architecture">
-        <div class="panel-title"><h3>System architecture</h3><span>MQL5 & Python</span></div>
-        <p style="font-size: 13px; color: #a9aaa2;">Designing automated Expert Advisors (EAs) with walk-forward testing and out-of-sample stochastic validation.</p>
+
+      <div class="quant-copy">
+
+        The research process turns market observations
+        into quantitative hypotheses, tests them against
+        historical data and evaluates robustness before
+        translating validated ideas into systematic
+        execution.
+
+        <br><br>
+
+        The focus is not simply finding entries.
+        It is designing a complete process around
+        research, risk, execution, validation and
+        capital protection.
+
       </div>
+
     </div>
+
+
+    <!-- XAUUSD MARKET DASHBOARD -->
+
+    <div class="quant-dashboard">
+
+
+      <div class="quant-chart">
+
+        <div class="chart-top">
+
+          <div>
+
+            <div class="chart-symbol">
+              XAUUSD · GOLD
+            </div>
+
+            <div class="chart-price">
+              MARKET STRUCTURE
+            </div>
+
+          </div>
+
+
+          <div class="chart-status">
+            SYSTEM VIEW / ILLUSTRATIVE
+          </div>
+
+        </div>
+
+
+        <div class="chart-area">
+
+          <svg
+            class="chart-svg"
+            viewBox="0 0 900 330"
+            preserveAspectRatio="none"
+            aria-label="Illustrative XAUUSD market structure chart"
+          >
+
+            <!-- price structure -->
+
+            <polyline
+              points="
+                0,250
+                55,230
+                100,244
+                145,195
+                190,210
+                240,170
+                285,185
+                335,125
+                390,145
+                435,105
+                480,122
+                525,82
+                575,104
+                620,70
+                670,92
+                715,48
+                760,70
+                810,34
+                850,53
+                900,22
+              "
+              fill="none"
+              stroke="#c9a85b"
+              stroke-width="3"
+            />
+
+            <!-- EMA 20 -->
+
+            <polyline
+              points="
+                0,270
+                55,252
+                100,248
+                145,225
+                190,218
+                240,198
+                285,190
+                335,165
+                390,158
+                435,135
+                480,128
+                525,112
+                575,105
+                620,94
+                670,87
+                715,72
+                760,69
+                810,54
+                850,50
+                900,39
+              "
+              fill="none"
+              stroke="#f0eee7"
+              stroke-width="1.3"
+              opacity=".65"
+            />
+
+            <!-- EMA 50 -->
+
+            <polyline
+              points="
+                0,286
+                55,280
+                100,274
+                145,264
+                190,257
+                240,244
+                285,235
+                335,223
+                390,211
+                435,198
+                480,187
+                525,175
+                575,164
+                620,152
+                670,140
+                715,128
+                760,118
+                810,105
+                850,96
+                900,85
+              "
+              fill="none"
+              stroke="#77786f"
+              stroke-width="1.3"
+              opacity=".8"
+            />
+
+            <!-- structure zones -->
+
+            <line
+              x1="0"
+              y1="190"
+              x2="900"
+              y2="190"
+              stroke="#ffffff"
+              opacity=".09"
+            />
+
+            <line
+              x1="0"
+              y1="105"
+              x2="900"
+              y2="105"
+              stroke="#ffffff"
+              opacity=".09"
+            />
+
+            <!-- entry marker -->
+
+            <circle
+              cx="575"
+              cy="104"
+              r="5"
+              fill="#c9a85b"
+            />
+
+            <text
+              x="590"
+              y="98"
+              fill="#c9a85b"
+              font-size="9"
+              font-family="monospace"
+            >
+              STRUCTURE
+            </text>
+
+          </svg>
+
+        </div>
+
+
+        <div class="chart-legend">
+
+          <span>
+            <i class="legend-line"></i>
+            Structure
+          </span>
+
+          <span>
+            <i
+              class="legend-line"
+              style="background:#f0eee7"
+            ></i>
+            EMA 20
+          </span>
+
+          <span>
+            <i
+              class="legend-line"
+              style="background:#77786f"
+            ></i>
+            EMA 50
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- METRICS -->
+
+      <div class="quant-metrics">
+
+        <div class="metric">
+
+          <div class="metric-label">
+            Market
+          </div>
+
+          <div class="metric-value">
+            XAUUSD
+          </div>
+
+        </div>
+
+
+        <div class="metric">
+
+          <div class="metric-label">
+            Research
+          </div>
+
+          <div class="metric-value">
+            OOS
+          </div>
+
+        </div>
+
+
+        <div class="metric">
+
+          <div class="metric-label">
+            Risk Engine
+          </div>
+
+          <div class="metric-value">
+            Dynamic
+          </div>
+
+        </div>
+
+
+        <div class="metric">
+
+          <div class="metric-label">
+            Execution
+          </div>
+
+          <div class="metric-value">
+            MQL5
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SYSTEM ARCHITECTURE -->
+
+    <div class="system-panel">
+
+      <div class="system-head">
+
+        <div>
+
+          <div class="eyebrow gold">
+            SYSTEM ARCHITECTURE
+          </div>
+
+          <h3>
+            From hypothesis to execution.
+          </h3>
+
+        </div>
+
+
+        <div class="system-status">
+          RESEARCH → DEPLOYMENT
+        </div>
+
+      </div>
+
+
+      <div class="system-flow">
+
+
+        <div class="system-node">
+
+          <div class="node-number">
+            01
+          </div>
+
+          <div class="node-title">
+            Research
+          </div>
+
+          <div class="node-desc">
+            Hypothesis & market observation
+          </div>
+
+        </div>
+
+
+        <div class="system-node">
+
+          <div class="node-number">
+            02
+          </div>
+
+          <div class="node-title">
+            Data
+          </div>
+
+          <div class="node-desc">
+            Historical datasets & features
+          </div>
+
+        </div>
+
+
+        <div class="system-node">
+
+          <div class="node-number">
+            03
+          </div>
+
+          <div class="node-title">
+            Validation
+          </div>
+
+          <div class="node-desc">
+            Backtest, OOS & robustness
+          </div>
+
+        </div>
+
+
+        <div class="system-node">
+
+          <div class="node-number">
+            04
+          </div>
+
+          <div class="node-title">
+            Risk
+          </div>
+
+          <div class="node-desc">
+            Exposure & capital protection
+          </div>
+
+        </div>
+
+
+        <div class="system-node">
+
+          <div class="node-number">
+            05
+          </div>
+
+          <div class="node-title">
+            Execution
+          </div>
+
+          <div class="node-desc">
+            MQL5 / automated deployment
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
   </div>
+
 </section>
+
+
+<!-- =======================================================
+     WORKING PRINCIPLES
+======================================================= -->
 
 <section class="section practice">
+
   <div class="container">
+
     <div class="section-head">
-      <div><div class="eyebrow">05 · Working principles</div><h2 class="section-title">Different tools.<br><i>One discipline.</i></h2></div>
-      <div class="section-desc">The portfolio is intentionally broad, but the underlying method stays consistent: observe, structure, test, refine.</div>
+
+      <div>
+
+        <div class="eyebrow">
+          05 · Working Principles
+        </div>
+
+        <h2 class="section-title">
+          Different tools.<br>
+          <i>One discipline.</i>
+        </h2>
+
+      </div>
+
+
+      <div class="section-desc">
+
+        Art, spatial design and quantitative research
+        may use different tools, but the underlying
+        approach remains consistent.
+
+      </div>
+
     </div>
+
+
     <div class="practice-grid">
-      <article class="practice-card"><div class="n">01</div><h3>Observation</h3><p>Look closely before deciding what something means — in a face, a room, a chart or a dataset.</p></article>
-      <article class="practice-card"><div class="n">02</div><h3>Structure</h3><p>Find the relationships that make the visible result possible, then make them clear.</p></article>
-      <article class="practice-card"><div class="n">03</div><h3>Process</h3><p>Turn intuition into a repeatable workflow that can be examined, improved and communicated.</p></article>
-      <article class="practice-card"><div class="n">04</div><h3>Refinement</h3><p>Remove noise, preserve what works and keep improving the quality of the final system.</p></article>
+
+
+      <article class="practice-card">
+
+        <div class="n">
+          01
+        </div>
+
+        <h3>
+          Observation
+        </h3>
+
+        <p>
+          Look closely before deciding what something
+          means — in a face, a room, a chart or a dataset.
+        </p>
+
+      </article>
+
+
+      <article class="practice-card">
+
+        <div class="n">
+          02
+        </div>
+
+        <h3>
+          Structure
+        </h3>
+
+        <p>
+          Identify the relationships that create the
+          visible result and make those relationships clear.
+        </p>
+
+      </article>
+
+
+      <article class="practice-card">
+
+        <div class="n">
+          03
+        </div>
+
+        <h3>
+          Process
+        </h3>
+
+        <p>
+          Turn intuition into a repeatable workflow
+          that can be examined, tested and improved.
+        </p>
+
+      </article>
+
+
+      <article class="practice-card">
+
+        <div class="n">
+          04
+        </div>
+
+        <h3>
+          Refinement
+        </h3>
+
+        <p>
+          Remove noise, preserve what works and keep
+          improving the quality of the final result.
+        </p>
+
+      </article>
+
+
     </div>
+
   </div>
+
 </section>
+
+
+<!-- =======================================================
+     CONTACT
+======================================================= -->
 
 <section class="contact" id="contact">
+
   <div class="container">
+
     <div class="contact-grid">
+
+
       <div>
-        <div class="eyebrow gold">06 · Contact</div>
-        <h2>Let’s make<br><i>something precise.</i></h2>
-        <p class="contact-copy">For art commissions, creative collaborations, quantitative research or system engineering inquiries, get in touch.</p>
+
+        <div class="eyebrow gold">
+          06 · Contact
+        </div>
+
+        <h2>
+          Let’s make<br>
+          <i>something precise.</i>
+        </h2>
+
+        <p class="contact-copy">
+
+          For art commissions, painting and decorative
+          projects, creative collaborations, quantitative
+          research or system engineering inquiries,
+          get in touch.
+
+        </p>
+
       </div>
+
+
       <div class="contact-links">
-        <a class="contact-link" href="mailto:KyeiEmma.9450@gmail.com"><span>Direct Email</span><span>KyeiEmma.9450@gmail.com ↗</span></a>
-        <a class="contact-link" href="https://www.instagram.com/rickylove_art" target="_blank" rel="noopener"><span>Instagram</span><span>@rickylove_art ↗</span></a>
-        <a class="contact-link" href="https://wa.me/233200006731" target="_blank" rel="noopener"><span>WhatsApp</span><span>+233 20 000 6731 ↗</span></a>
-        <a class="contact-link" href="https://kyeiemmanuel.github.io" target="_blank" rel="noopener"><span>GitHub</span><span>https://kyeiemmanuel.github.io ↗</span></a>
+
+
+        <a
+          class="contact-link"
+          href="mailto:KyeiEmma.9450@gmail.com"
+        >
+
+          <span>
+            Direct Email
+          </span>
+
+          <span>
+            KyeiEmma.9450@gmail.com ↗
+          </span>
+
+        </a>
+
+
+        <a
+          class="contact-link"
+          href="https://www.instagram.com/rickylove_art"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <span>
+            Instagram
+          </span>
+
+          <span>
+            @rickylove_art ↗
+          </span>
+
+        </a>
+
+
+        <a
+          class="contact-link"
+          href="https://wa.me/233200006731"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <span>
+            WhatsApp
+          </span>
+
+          <span>
+            +233 20 000 6731 ↗
+          </span>
+
+        </a>
+
+
+        <a
+          class="contact-link"
+          href="https://github.com/KyeiEmmanuel"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <span>
+            GitHub
+          </span>
+
+          <span>
+            @KyeiEmmanuel ↗
+          </span>
+
+        </a>
+
+
+        <a
+          class="contact-link"
+          href="https://kyeiemmanuel.github.io"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <span>
+            Website
+          </span>
+
+          <span>
+            Personal site ↗
+          </span>
+
+        </a>
+
+
       </div>
+
     </div>
-    <div class="footer"><span>© <span id="year"></span> Emmanuel Kyei · Rickylove</span><span>Artist · Quantitative Finance · System Architecture</span></div>
+
+
+    <div class="footer">
+
+      <span>
+        © <span id="year"></span>
+        Emmanuel Kyei · Rickylove
+      </span>
+
+      <span>
+        Artist · Quantitative Finance · System Architecture
+      </span>
+
+    </div>
+
   </div>
+
 </section>
 
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
 <script>
-const menu=document.getElementById('menu'), nav=document.getElementById('navlinks');
-menu.addEventListener('click',()=>nav.classList.toggle('open'));
-document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-document.getElementById('year').textContent=new Date().getFullYear();
+
+const menu = document.getElementById("menu");
+const nav = document.getElementById("navlinks");
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
+
+document
+  .querySelectorAll(".navlinks a")
+  .forEach(link => {
+
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+    });
+
+  });
+
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
 </script>
+
 </body>
 </html>

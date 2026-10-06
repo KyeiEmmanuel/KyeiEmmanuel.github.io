@@ -1,35 +1,50 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta name="theme-color" content="#0b0c0e">
+<head>
+
+<meta charset="utf-8">
+
 <meta
-  name="description"
-  content="Emmanuel Kyei — Artist, Quantitative Finance & System Architect. Rickylove Art and Rickylove FX."
+  name="viewport"
+  content="width=device-width,initial-scale=1"
 >
 
-<title>Emmanuel Kyei — Artist · Quantitative Finance · System Architecture</title>
+<meta
+  name="theme-color"
+  content="#090a0b"
+>
+
+<meta
+  name="description"
+  content="Emmanuel Kyei — Artist, Quantitative Finance & System Architect. Rickylove Art, Painting & Spatial Projects, Quantitative Research and Automated Trading Systems."
+>
+
+<title>
+  Emmanuel Kyei — Artist · Quantitative Finance · System Architecture
+</title>
+
 
 <style>
 
 /* =========================================================
-   DESIGN SYSTEM
+   CORE DESIGN SYSTEM
 ========================================================= */
 
 :root{
+
   --ink:#090a0b;
   --ink-2:#111315;
   --ink-3:#181b1e;
 
   --paper:#f3f0e8;
-  --paper-2:#e8e4da;
+  --paper-2:#e9e5db;
   --paper-3:#ddd8cc;
 
   --white:#faf9f5;
+
   --gold:#c9a85b;
-  --gold-light:#dfc782;
+  --gold-light:#dec47f;
 
   --graphite:#77786f;
   --muted:#a7a89f;
@@ -37,13 +52,33 @@
   --line-dark:rgba(9,10,11,.14);
   --line-light:rgba(255,255,255,.14);
 
-  --serif:Georgia,"Times New Roman",serif;
-  --sans:Inter,ui-sans-serif,system-ui,-apple-system,
-         BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  --serif:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  --sans:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --mono:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
 
   --max:1440px;
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
   box-sizing:border-box;
@@ -59,11 +94,6 @@ body{
   color:var(--ink);
   font-family:var(--sans);
   line-height:1.55;
-}
-
-body,
-button,
-a{
   -webkit-font-smoothing:antialiased;
 }
 
@@ -112,10 +142,13 @@ button{
 ========================================================= */
 
 .site-nav{
+
   position:fixed;
   z-index:100;
+
   left:50%;
   top:18px;
+
   transform:translateX(-50%);
 
   width:min(calc(100% - 36px),1360px);
@@ -126,11 +159,13 @@ button{
 
   padding:13px 16px 13px 20px;
 
-  background:rgba(9,10,11,.78);
+  background:rgba(9,10,11,.80);
+
   backdrop-filter:blur(22px);
   -webkit-backdrop-filter:blur(22px);
 
   border:1px solid rgba(255,255,255,.13);
+
   border-radius:999px;
 
   color:var(--white);
@@ -140,92 +175,137 @@ button{
 }
 
 .brand{
+
   font-family:var(--serif);
+
   font-size:19px;
+
   letter-spacing:.03em;
 }
 
 .brand small{
+
   font-family:var(--sans);
+
   font-size:7px;
+
   letter-spacing:.22em;
+
   text-transform:uppercase;
+
   color:var(--gold);
+
   margin-left:9px;
 }
 
 .navlinks{
+
   display:flex;
+
   gap:25px;
+
   font-size:9px;
+
   letter-spacing:.17em;
+
   text-transform:uppercase;
 }
 
 .navlinks a{
+
   opacity:.72;
-  transition:.25s ease;
+
+  transition:
+    opacity .25s ease,
+    color .25s ease;
 }
 
 .navlinks a:hover{
+
   opacity:1;
+
   color:var(--gold-light);
 }
 
 .nav-cta{
+
   border:1px solid rgba(255,255,255,.24);
+
   border-radius:999px;
+
   padding:8px 14px;
 
   font-size:8px;
+
   letter-spacing:.15em;
+
   text-transform:uppercase;
 
   transition:.25s ease;
 }
 
 .nav-cta:hover{
+
   background:var(--gold);
+
   color:var(--ink);
+
   border-color:var(--gold);
 }
 
 .menu{
+
   display:none;
+
   background:none;
+
   border:0;
+
   color:#fff;
+
   font-size:20px;
+
   cursor:pointer;
 }
 
 
 /* =========================================================
-   HERO — COVER
+   HERO / COVER
 ========================================================= */
 
 .hero{
+
   min-height:100svh;
+
   position:relative;
+
   overflow:hidden;
 
   background:#080909;
+
   color:var(--white);
 
   display:flex;
+
   align-items:flex-end;
 }
 
 .hero-photo{
+
   position:absolute;
+
   inset:0;
+
   z-index:1;
 }
 
 .hero-photo img{
+
   width:100%;
   height:100%;
+
   object-fit:cover;
+
   object-position:center 22%;
 
   filter:
@@ -234,13 +314,19 @@ button{
     saturate(82%);
 }
 
-/* Neutral cinematic treatment — NO RED */
+
+/* NO RED FILTER */
+
 .hero-photo::after{
+
   content:"";
+
   position:absolute;
+
   inset:0;
 
   background:
+
     linear-gradient(
       90deg,
       rgba(7,8,9,.92) 0%,
@@ -248,6 +334,7 @@ button{
       rgba(7,8,9,.20) 72%,
       rgba(7,8,9,.34) 100%
     ),
+
     linear-gradient(
       0deg,
       rgba(7,8,9,.92) 0%,
@@ -258,32 +345,44 @@ button{
   z-index:2;
 }
 
-/* subtle film grain */
+
+/* subtle texture */
+
 .hero::before{
+
   content:"";
+
   position:absolute;
+
   inset:0;
+
   z-index:3;
+
   pointer-events:none;
 
-  opacity:.045;
+  opacity:.035;
 
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
 
 .hero-frame{
+
   position:absolute;
+
   inset:34px;
 
   border:1px solid rgba(255,255,255,.15);
 
   pointer-events:none;
+
   z-index:4;
 }
 
 .hero-copy{
+
   position:relative;
+
   z-index:5;
 
   padding:0 0 70px;
@@ -292,8 +391,11 @@ button{
 }
 
 .hero-kicker{
+
   display:flex;
+
   align-items:center;
+
   gap:14px;
 
   margin-bottom:22px;
@@ -302,24 +404,33 @@ button{
 }
 
 .hero-kicker span:last-child{
+
   display:block;
+
   height:1px;
+
   width:60px;
+
   background:var(--gold);
 }
 
 .hero h1{
+
   margin:0 0 28px;
 
   font-size:clamp(54px,9.5vw,145px);
+
   line-height:.82;
+
   letter-spacing:-.065em;
 
   font-weight:700;
+
   text-transform:uppercase;
 }
 
 .hero h1 em{
+
   display:block;
 
   margin-top:17px;
@@ -327,23 +438,31 @@ button{
   color:var(--gold-light);
 
   font-family:var(--serif);
+
   font-size:.31em;
+
   line-height:1.05;
+
   letter-spacing:-.01em;
 
   font-style:italic;
+
   text-transform:none;
 }
 
 .hero-meta{
+
   display:flex;
+
   align-items:flex-end;
+
   gap:40px;
 
   max-width:950px;
 }
 
 .hero-intro{
+
   max-width:650px;
 
   margin:0;
@@ -353,15 +472,25 @@ button{
   border-left:1px solid var(--gold);
 
   background:rgba(5,6,7,.34);
+
   backdrop-filter:blur(8px);
 
   color:#e4e2db;
 
   font-size:14px;
+
   line-height:1.85;
 }
 
+.hero-intro strong{
+
+  color:var(--gold-light);
+
+  font-weight:600;
+}
+
 .hero-side{
+
   margin-left:auto;
 
   min-width:160px;
@@ -371,18 +500,25 @@ button{
   color:#c2c3bd;
 
   font-size:8px;
+
   letter-spacing:.18em;
+
   line-height:1.9;
+
   text-transform:uppercase;
 }
 
 .hero-location{
+
   color:var(--gold);
 }
 
 .scroll{
+
   position:absolute;
+
   right:48px;
+
   bottom:42px;
 
   z-index:6;
@@ -390,7 +526,9 @@ button{
   writing-mode:vertical-rl;
 
   font-size:8px;
+
   letter-spacing:.23em;
+
   text-transform:uppercase;
 
   color:#c4c5bf;
@@ -402,73 +540,197 @@ button{
 ========================================================= */
 
 .section{
+
   padding:125px 0;
 }
 
 .section.dark{
+
   background:var(--ink);
+
   color:var(--white);
 }
 
 .section-head{
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-end;
+
   gap:50px;
 
   margin-bottom:58px;
 }
 
 .section-title{
+
   margin:8px 0 0;
 
   font-family:var(--serif);
+
   font-size:clamp(43px,6vw,88px);
 
   line-height:.9;
+
   letter-spacing:-.045em;
 }
 
 .section-title i{
+
   font-weight:400;
 }
 
 .section-desc{
+
   max-width:450px;
 
   color:#686a62;
 
   font-size:13px;
+
   line-height:1.85;
 }
 
 .dark .section-desc{
+
   color:#b9bab3;
 }
 
 
 /* =========================================================
-   ABOUT
+   ABOUT / BIO
 ========================================================= */
 
-<div class="about-photo">
-  <img src="899D4ADD-B676-41A0-A776-902C77D18539.jpeg"
-       alt="Emmanuel Kyei — Artist and Quantitative Finance & System Architect">
-</div>
+.about-grid{
+
+  display:grid;
+
+  grid-template-columns:1.05fr .95fr;
+
+  gap:90px;
+
+  align-items:center;
+}
+
+.about-copy p{
+
+  margin:0 0 25px;
+
+  max-width:760px;
+
+  font-size:clamp(20px,2vw,29px);
+
+  line-height:1.43;
+
+  letter-spacing:-.015em;
+}
+
+.about-copy .small{
+
+  max-width:670px;
+
+  color:#676961;
+
+  font-size:14px;
+
+  line-height:1.9;
+}
+
+.about-photo{
+
+  position:relative;
+}
+
+.about-photo::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-18px 18px 18px -18px;
+
+  border:1px solid var(--line-dark);
+
+  z-index:0;
+}
+
+.about-photo::after{
+
+  content:"EMMANUEL KYEI";
+
+  position:absolute;
+
+  right:-26px;
+
+  bottom:22px;
+
+  writing-mode:vertical-rl;
+
+  font-family:var(--mono);
+
+  font-size:7px;
+
+  letter-spacing:.25em;
+
+  color:#77786f;
+}
+
+
+/*
+IMPORTANT:
+BIO IMAGE
+*/
+
+.about-photo img{
+
+  position:relative;
+
+  z-index:1;
+
+  width:100%;
+
+  aspect-ratio:4/5;
+
+  object-fit:cover;
+
+  object-position:center;
+
+  background:#ddd8cc;
+}
+
+.signature{
+
+  margin-top:32px;
+
+  color:var(--gold);
+
+  font-family:var(--serif);
+
+  font-style:italic;
+
+  font-size:34px;
+}
+
 
 /* =========================================================
-   ART
+   ART GALLERY
 ========================================================= */
 
 .gallery-main{
+
   display:grid;
+
   grid-template-columns:1.35fr .65fr;
 
   gap:22px;
 }
 
 .art-card{
+
   position:relative;
+
   overflow:hidden;
 
   min-height:640px;
@@ -479,7 +741,9 @@ button{
 }
 
 .art-card img{
+
   width:100%;
+
   height:100%;
 
   object-fit:cover;
@@ -490,19 +754,28 @@ button{
 }
 
 .art-card:hover img{
+
   transform:scale(1.035);
+
   filter:brightness(1.05);
 }
 
 .art-caption{
+
   position:absolute;
+
   left:0;
+
   right:0;
+
   bottom:0;
 
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-end;
+
   gap:20px;
 
   padding:80px 26px 22px;
@@ -517,22 +790,31 @@ button{
 }
 
 .art-caption strong{
+
   font-family:var(--serif);
+
   font-size:25px;
+
   font-weight:400;
 }
 
 .art-caption span{
+
   font-size:8px;
+
   letter-spacing:.18em;
+
   text-transform:uppercase;
 
   color:var(--gold-light);
 }
 
 .gallery-note{
+
   display:flex;
+
   flex-direction:column;
+
   justify-content:space-between;
 
   padding:43px;
@@ -543,41 +825,55 @@ button{
 }
 
 .number{
+
   color:var(--gold);
 
   font-family:var(--mono);
+
   font-size:9px;
+
   letter-spacing:.18em;
 }
 
 .gallery-note h3{
+
   margin:18px 0 20px;
 
   font-family:var(--serif);
+
   font-size:42px;
+
   line-height:.96;
+
   font-weight:400;
 }
 
 .gallery-note p{
+
   color:#b9bab2;
 
   font-size:13px;
+
   line-height:1.9;
 }
 
 .gallery-future{
+
   margin-top:22px;
 
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:12px;
 }
 
 .future-card{
+
   min-height:175px;
 
   display:flex;
+
   align-items:flex-end;
 
   padding:17px;
@@ -594,28 +890,37 @@ button{
   color:#dddcd5;
 
   font-family:var(--mono);
+
   font-size:8px;
+
   letter-spacing:.12em;
+
   text-transform:uppercase;
 }
 
 
 /* =========================================================
-   PAINTING / DECORATION
+   PAINTING & SPATIAL PROJECTS
 ========================================================= */
 
 .painting{
+
   background:var(--paper);
+
   color:var(--ink);
 }
 
 .paint-grid{
+
   display:grid;
+
   grid-template-columns:1fr 1fr 1fr;
+
   gap:18px;
 }
 
 .paint-card{
+
   background:#f8f5ee;
 
   border:1px solid var(--line-dark);
@@ -628,6 +933,7 @@ button{
 }
 
 .paint-card:hover{
+
   transform:translateY(-5px);
 
   box-shadow:
@@ -635,6 +941,7 @@ button{
 }
 
 .paint-visual{
+
   position:relative;
 
   height:310px;
@@ -645,7 +952,9 @@ button{
 }
 
 .paint-visual img{
+
   width:100%;
+
   height:100%;
 
   object-fit:cover;
@@ -654,65 +963,88 @@ button{
 }
 
 .paint-card:hover .paint-visual img{
+
   transform:scale(1.04);
 }
 
 .paint-overlay{
+
   position:absolute;
-  inset:auto 0 0;
+
+  left:0;
+
+  right:0;
+
+  bottom:0;
 
   padding:45px 18px 14px;
 
   color:white;
 
-  background:linear-gradient(
-    transparent,
-    rgba(0,0,0,.7)
-  );
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,.7)
+    );
 }
 
 .paint-overlay span{
+
   font-family:var(--mono);
+
   font-size:8px;
+
   letter-spacing:.17em;
+
   text-transform:uppercase;
 }
 
 .paint-tag{
+
   margin:19px 4px 8px;
 
   color:#77786f;
 
   font-family:var(--mono);
+
   font-size:8px;
+
   letter-spacing:.17em;
+
   text-transform:uppercase;
 }
 
 .paint-card h3{
+
   margin:0 4px 7px;
 
   font-family:var(--serif);
+
   font-size:27px;
+
   font-weight:400;
 }
 
 .paint-card p{
+
   margin:0 4px 18px;
 
   color:#676860;
 
   font-size:12px;
+
   line-height:1.8;
 }
 
 
 /* =========================================================
-   COLOR PALETTE
+   PALETTE
 ========================================================= */
 
 .palette{
+
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
 
   margin:0 4px 5px;
@@ -723,50 +1055,63 @@ button{
 }
 
 .palette-item{
+
   min-height:64px;
 
   display:flex;
+
   align-items:flex-end;
 
   padding:8px;
 
   font-family:var(--mono);
+
   font-size:7px;
+
   letter-spacing:.08em;
 }
 
 .palette-item span{
-  mix-blend-mode:difference;
-  color:white;
+
+  color:rgba(0,0,0,.7);
 }
 
 .palette-ivory{
+
   background:#f1ece1;
-  color:#555;
 }
 
 .palette-olive{
+
   background:#33463b;
+
+  color:white;
+}
+
+.palette-olive span{
+
   color:white;
 }
 
 .palette-stone{
+
   background:#b9ad99;
-  color:#333;
 }
 
 .palette-brass{
+
   background:#b69a5e;
-  color:#222;
 }
 
 
 /* =========================================================
-   QUANT SECTION
+   QUANTITATIVE FINANCE
 ========================================================= */
 
 .quant-intro{
+
   display:grid;
+
   grid-template-columns:.8fr 1.2fr;
 
   gap:80px;
@@ -775,28 +1120,36 @@ button{
 }
 
 .quant-big{
+
   font-family:var(--serif);
 
   font-size:clamp(40px,5vw,70px);
 
   line-height:.97;
+
   letter-spacing:-.045em;
 }
 
 .quant-copy{
+
   max-width:660px;
 
   color:#bfc0b9;
 
   font-size:14px;
+
   line-height:1.9;
 }
 
 
-/* Research dashboard */
+/* =========================================================
+   QUANT DASHBOARD
+========================================================= */
 
 .quant-dashboard{
+
   display:grid;
+
   grid-template-columns:1.35fr .65fr;
 
   gap:18px;
@@ -805,6 +1158,7 @@ button{
 }
 
 .quant-chart{
+
   position:relative;
 
   padding:25px;
@@ -817,50 +1171,64 @@ button{
 }
 
 .chart-top{
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-start;
 
   margin-bottom:25px;
 }
 
 .chart-symbol{
+
   font-family:var(--mono);
+
   font-size:10px;
+
   letter-spacing:.14em;
 }
 
 .chart-price{
+
   margin-top:5px;
 
   font-family:var(--serif);
+
   font-size:30px;
 }
 
 .chart-status{
+
   color:var(--gold);
 
   font-family:var(--mono);
+
   font-size:8px;
+
   letter-spacing:.15em;
+
   text-transform:uppercase;
 }
 
 .chart-area{
+
   position:relative;
 
   height:330px;
 
   overflow:hidden;
 
-  border:
-    1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
 
   background:
+
     linear-gradient(
       rgba(255,255,255,.045) 1px,
       transparent 1px
     ),
+
     linear-gradient(
       90deg,
       rgba(255,255,255,.045) 1px,
@@ -870,30 +1238,38 @@ button{
   background-size:50px 50px;
 }
 
-/* SVG chart */
 .chart-svg{
+
   width:100%;
+
   height:100%;
 }
 
 .chart-legend{
+
   display:flex;
+
   gap:20px;
 
   margin-top:15px;
 
   font-family:var(--mono);
+
   font-size:7px;
+
   letter-spacing:.12em;
+
   text-transform:uppercase;
 
   color:#92948d;
 }
 
 .legend-line{
+
   display:inline-block;
 
   width:20px;
+
   height:1px;
 
   margin-right:6px;
@@ -909,7 +1285,9 @@ button{
 ========================================================= */
 
 .quant-metrics{
+
   display:grid;
+
   grid-template-columns:repeat(2,1fr);
 
   gap:1px;
@@ -920,24 +1298,31 @@ button{
 }
 
 .metric{
+
   padding:23px;
 
   background:var(--ink-2);
 }
 
 .metric-label{
+
   color:#7f817a;
 
   font-family:var(--mono);
+
   font-size:7px;
+
   letter-spacing:.15em;
+
   text-transform:uppercase;
 }
 
 .metric-value{
+
   margin-top:10px;
 
   font-family:var(--serif);
+
   font-size:29px;
 
   color:#eee;
@@ -949,6 +1334,7 @@ button{
 ========================================================= */
 
 .system-panel{
+
   margin-top:18px;
 
   padding:28px;
@@ -964,43 +1350,59 @@ button{
 }
 
 .system-head{
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-end;
 
   margin-bottom:30px;
 }
 
 .system-head h3{
+
   margin:5px 0 0;
 
   font-family:var(--serif);
+
   font-size:31px;
+
   font-weight:400;
 }
 
 .system-status{
+
   color:var(--gold);
 
   font-family:var(--mono);
+
   font-size:7px;
+
   letter-spacing:.14em;
+
   text-transform:uppercase;
 }
 
 .system-flow{
+
   display:grid;
+
   grid-template-columns:repeat(5,1fr);
+
   gap:10px;
 }
 
 .system-node{
+
   position:relative;
 
   min-height:105px;
 
   display:flex;
+
   flex-direction:column;
+
   justify-content:space-between;
 
   padding:15px;
@@ -1011,11 +1413,13 @@ button{
 }
 
 .system-node:not(:last-child)::after{
+
   content:"→";
 
   position:absolute;
 
   right:-12px;
+
   top:50%;
 
   transform:translateY(-50%);
@@ -1025,41 +1429,51 @@ button{
   color:var(--gold);
 
   font-family:var(--mono);
+
   font-size:12px;
 }
 
 .node-number{
+
   color:var(--gold);
 
   font-family:var(--mono);
+
   font-size:7px;
 }
 
 .node-title{
+
   font-family:var(--serif);
+
   font-size:18px;
 }
 
 .node-desc{
+
   color:#83857f;
 
   font-size:8px;
+
   line-height:1.5;
 }
 
 
 /* =========================================================
-   PRACTICE
+   WORKING PRINCIPLES
 ========================================================= */
 
 .practice{
+
   background:var(--paper);
 
   color:var(--ink);
 }
 
 .practice-grid{
+
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
 
   gap:1px;
@@ -1070,6 +1484,7 @@ button{
 }
 
 .practice-card{
+
   min-height:220px;
 
   padding:30px;
@@ -1078,27 +1493,35 @@ button{
 }
 
 .practice-card .n{
+
   color:#7b7c74;
 
   font-family:var(--mono);
+
   font-size:8px;
+
   letter-spacing:.15em;
 }
 
 .practice-card h3{
+
   margin:30px 0 10px;
 
   font-family:var(--serif);
+
   font-size:28px;
+
   font-weight:400;
 }
 
 .practice-card p{
+
   margin:0;
 
   color:#66675f;
 
   font-size:12px;
+
   line-height:1.8;
 }
 
@@ -1108,6 +1531,7 @@ button{
 ========================================================= */
 
 .contact{
+
   background:var(--ink);
 
   color:var(--white);
@@ -1116,7 +1540,9 @@ button{
 }
 
 .contact-grid{
+
   display:grid;
+
   grid-template-columns:1fr 1fr;
 
   gap:80px;
@@ -1125,6 +1551,7 @@ button{
 }
 
 .contact h2{
+
   margin:10px 0 30px;
 
   font-family:var(--serif);
@@ -1132,28 +1559,36 @@ button{
   font-size:clamp(50px,7vw,100px);
 
   line-height:.84;
+
   letter-spacing:-.055em;
 
   font-weight:400;
 }
 
 .contact-copy{
+
   max-width:530px;
 
   color:#b8b9b1;
 
   font-size:14px;
+
   line-height:1.85;
 }
 
 .contact-links{
+
   display:grid;
+
   gap:10px;
 }
 
 .contact-link{
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
 
   gap:20px;
@@ -1168,21 +1603,27 @@ button{
 }
 
 .contact-link:hover{
+
   color:var(--gold-light);
 
   border-color:var(--gold);
 }
 
 .contact-link span:last-child{
+
   color:var(--gold);
 }
 
 .footer{
+
   display:flex;
+
   justify-content:space-between;
+
   gap:20px;
 
   margin-top:90px;
+
   padding-top:20px;
 
   border-top:1px solid rgba(255,255,255,.12);
@@ -1190,8 +1631,11 @@ button{
   color:#74766f;
 
   font-family:var(--mono);
+
   font-size:7px;
+
   letter-spacing:.15em;
+
   text-transform:uppercase;
 }
 
@@ -1211,22 +1655,27 @@ button{
   }
 
   .navlinks.open{
+
     display:flex;
 
     position:absolute;
 
     top:58px;
+
     left:0;
+
     right:0;
 
     padding:20px;
 
     flex-direction:column;
+
     gap:16px;
 
     background:var(--ink);
 
     border:1px solid var(--line-light);
+
     border-radius:18px;
   }
 
@@ -1285,6 +1734,7 @@ button{
   .gallery-note{
     min-height:320px;
   }
+
 }
 
 
@@ -1295,7 +1745,9 @@ button{
   }
 
   .site-nav{
+
     width:calc(100% - 20px);
+
     top:10px;
   }
 
@@ -1324,6 +1776,7 @@ button{
   }
 
   .section-head{
+
     display:block;
 
     margin-bottom:35px;
@@ -1374,45 +1827,75 @@ button{
 
   .footer span{
     display:block;
+
     margin-top:9px;
   }
 
   .contact-link{
+
     align-items:flex-start;
+
     flex-direction:column;
+
     gap:5px;
   }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =======================================================
+<!-- =====================================================
      NAVIGATION
-======================================================= -->
+===================================================== -->
 
 <nav class="site-nav">
 
   <a class="brand" href="#top">
+
     Emmanuel Kyei
-    <small>Rickylove</small>
+
+    <small>
+      Rickylove
+    </small>
+
   </a>
 
+
   <div class="navlinks" id="navlinks">
-    <a href="#about">Profile</a>
-    <a href="#art">Art</a>
-    <a href="#projects">Painting</a>
-    <a href="#quant">Quant</a>
-    <a href="#contact">Contact</a>
+
+    <a href="#about">
+      Profile
+    </a>
+
+    <a href="#art">
+      Art
+    </a>
+
+    <a href="#projects">
+      Painting
+    </a>
+
+    <a href="#quant">
+      Quant
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
   </div>
+
 
   <a class="nav-cta" href="#contact">
     Work / Connect
   </a>
+
 
   <button
     class="menu"
@@ -1425,32 +1908,41 @@ button{
 </nav>
 
 
-<!-- =======================================================
-     HERO — PERSONAL COVER
-======================================================= -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <header class="hero" id="top">
 
+
   <div class="hero-photo">
+
+    <!-- HERO / COVER IMAGE -->
 
     <img
       src="2905B819-A634-4575-869D-501E152D5F01.jpeg"
-      alt="Emmanuel Kyei"
-      onerror="this.style.display='none'"
+      alt="Emmanuel Kyei — Rickylove"
     >
 
   </div>
 
+
   <div class="hero-frame"></div>
+
 
   <div class="container">
 
     <div class="hero-copy">
 
+
       <div class="hero-kicker">
 
         <span class="eyebrow">
-          Artist · Quantitative Finance · System Architecture
+
+          Artist · Quantitative Finance ·
+          System Architecture
+
         </span>
 
         <span></span>
@@ -1460,7 +1952,8 @@ button{
 
       <h1>
 
-        EMMANUEL<br>
+        EMMANUEL
+        <br>
         KYEI
 
         <em>
@@ -1472,14 +1965,18 @@ button{
 
       <div class="hero-meta">
 
+
         <p class="hero-intro">
 
-          Emmanuel Kyei is an artist and quantitative system architect
-          working across visual art, spatial design and financial systems.
-          Under the name <strong>Rickylove</strong>, his work combines
-          creative precision with analytical thinking — from graphite
-          portraiture and painting projects to quantitative research and
-          automated trading systems.
+          Emmanuel Kyei is an artist and quantitative
+          system architect working across visual art,
+          spatial design and financial systems.
+
+          Under the name <strong>Rickylove</strong>,
+          his work combines creative precision with
+          analytical thinking — from graphite portraiture
+          and painting projects to quantitative research
+          and automated trading systems.
 
         </p>
 
@@ -1500,6 +1997,7 @@ button{
 
         </div>
 
+
       </div>
 
     </div>
@@ -1511,18 +2009,22 @@ button{
     Scroll to explore
   </div>
 
+
 </header>
 
 
-<!-- =======================================================
-     PROFILE
-======================================================= -->
+
+<!-- =====================================================
+     PROFILE / BIO
+===================================================== -->
 
 <section class="section" id="about">
 
   <div class="container">
 
+
     <div class="section-head">
+
 
       <div>
 
@@ -1531,8 +2033,12 @@ button{
         </div>
 
         <h2 class="section-title">
-          A visual eye.<br>
+
+          A visual eye.
+          <br>
+
           <i>A structured mind.</i>
+
         </h2>
 
       </div>
@@ -1547,7 +2053,9 @@ button{
 
       </div>
 
+
     </div>
+
 
 
     <div class="about-grid">
@@ -1555,45 +2063,65 @@ button{
 
       <div class="about-copy">
 
-        <p>
-          My work sits at the intersection of visual creativity
-          and systems thinking.
-        </p>
 
         <p>
-          Through art, I developed an eye for proportion,
-          detail, composition and visual balance. Through
-          quantitative finance, I developed a different
-          discipline — researching ideas, measuring uncertainty
-          and building systems that can be tested and refined.
+
+          My work sits at the intersection of
+          visual creativity and systems thinking.
+
         </p>
+
+
+        <p>
+
+          Through art, I developed an eye for
+          proportion, detail, composition and visual
+          balance. Through quantitative finance,
+          I developed a different discipline —
+          researching ideas, measuring uncertainty
+          and building systems that can be tested
+          and refined.
+
+        </p>
+
 
         <p class="small">
 
-          <strong>Rickylove</strong> is the creative identity
-          through which these disciplines come together.
-          The work is intentionally diverse, but the underlying
-          standard remains the same: observe carefully,
-          structure clearly and refine relentlessly.
+          <strong>Rickylove</strong> is the creative
+          identity through which these disciplines
+          come together.
+
+          The work is intentionally diverse,
+          but the underlying standard remains
+          the same:
+
+          observe carefully,
+          structure clearly
+          and refine relentlessly.
 
         </p>
+
 
         <div class="signature">
           Rickylove
         </div>
 
+
       </div>
+
 
 
       <div class="about-photo">
 
+        <!-- BIO IMAGE — CORRECTED -->
+
         <img
-          src="2905B819-A634-4575-869D-501E152D5F01.jpeg"
-          alt="Emmanuel Kyei portrait"
-          onerror="this.style.display='none'"
+          src="899D4ADD-B676-41A0-A776-902C77D18539.jpeg"
+          alt="Emmanuel Kyei — Artist and Quantitative Finance & System Architect"
         >
 
       </div>
+
 
     </div>
 
@@ -1602,15 +2130,18 @@ button{
 </section>
 
 
-<!-- =======================================================
+
+<!-- =====================================================
      RICKYLOVE ART
-======================================================= -->
+===================================================== -->
 
 <section class="section dark" id="art">
 
   <div class="container">
 
+
     <div class="section-head">
+
 
       <div>
 
@@ -1619,21 +2150,28 @@ button{
         </div>
 
         <h2 class="section-title">
-          Drawn with<br>
+
+          Drawn with
+          <br>
+
           <i>precision.</i>
+
         </h2>
 
       </div>
 
+
       <div class="section-desc">
 
-        Graphite portraiture, charcoal studies and
-        visual works focused on proportion, light,
-        expression and structural realism.
+        Graphite portraiture, charcoal studies
+        and visual works focused on proportion,
+        light, expression and structural realism.
 
       </div>
 
+
     </div>
+
 
 
     <div class="gallery-main">
@@ -1646,13 +2184,15 @@ button{
         rel="noopener"
       >
 
+
         <img
           src="IMG_2105.jpeg"
           alt="Rickylove Art graphite portrait"
-          onerror="this.style.display='none'"
         >
 
+
         <div class="art-caption">
+
 
           <div>
 
@@ -1668,79 +2208,108 @@ button{
 
           </div>
 
+
           <span>
             View full work ↗
           </span>
 
+
         </div>
+
 
       </a>
 
 
+
       <div class="gallery-note">
 
+
         <div>
+
 
           <div class="number">
             COLLECTION / 001
           </div>
 
+
           <h3>
-            Precision<br>
+
+            Precision
+            <br>
+
             in graphite.
+
           </h3>
+
 
           <p>
 
             A study of light, contour and expression.
             The drawing process focuses on proportion,
-            tonal structure and controlled contrast to
-            create realistic depth.
+            tonal structure and controlled contrast
+            to create realistic depth.
 
           </p>
+
 
         </div>
 
 
         <div class="eyebrow gold">
+
           More works coming
+
         </div>
 
+
       </div>
+
 
     </div>
 
 
+
     <div class="gallery-future">
+
 
       <div class="future-card">
         02 · Charcoal Realism
       </div>
 
+
       <div class="future-card">
         03 · Proportion Study
       </div>
+
 
       <div class="future-card">
         04 · Custom Commission
       </div>
 
+
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- =======================================================
-     PAINTING & SPATIAL DESIGN
-======================================================= -->
 
-<section class="section painting" id="projects">
+<!-- =====================================================
+     PAINTING & SPATIAL PROJECTS
+===================================================== -->
+
+<section
+  class="section painting"
+  id="projects"
+>
 
   <div class="container">
 
+
     <div class="section-head">
+
 
       <div>
 
@@ -1748,9 +2317,14 @@ button{
           03 · Painting & Spatial Design
         </div>
 
+
         <h2 class="section-title">
-          Colour meets<br>
+
+          Colour meets
+          <br>
+
           <i>space.</i>
+
         </h2>
 
       </div>
@@ -1764,7 +2338,9 @@ button{
 
       </div>
 
+
     </div>
+
 
 
     <div class="paint-grid">
@@ -1774,19 +2350,24 @@ button{
 
       <article class="paint-card">
 
+
         <div class="paint-visual">
+
 
           <img
             src="IMG_3378.jpeg"
             alt="Exterior painting project"
-            onerror="this.style.display='none'"
           >
 
+
           <div class="paint-overlay">
+
             <span>
               Exterior / Finish Direction
             </span>
+
           </div>
+
 
         </div>
 
@@ -1795,59 +2376,75 @@ button{
           Exterior / Concept 01
         </div>
 
+
         <h3>
           Modern residence
         </h3>
 
+
         <p>
 
-          A restrained architectural palette combining
-          warm mineral walls, deep natural tones and
-          subtle metallic accents for a premium exterior.
+          A restrained architectural palette
+          combining warm mineral walls,
+          deep natural tones and subtle
+          metallic accents for a premium
+          exterior finish.
 
         </p>
 
 
         <div class="palette">
 
+
           <div class="palette-item palette-ivory">
             <span>IVORY</span>
           </div>
+
 
           <div class="palette-item palette-olive">
             <span>OLIVE</span>
           </div>
 
+
           <div class="palette-item palette-stone">
             <span>STONE</span>
           </div>
+
 
           <div class="palette-item palette-brass">
             <span>BRASS</span>
           </div>
 
+
         </div>
 
+
       </article>
+
 
 
       <!-- INTERIOR -->
 
       <article class="paint-card">
 
+
         <div class="paint-visual">
+
 
           <img
             src="IMG_0859.jpeg"
             alt="Interior painting project"
-            onerror="this.style.display='none'"
           >
 
+
           <div class="paint-overlay">
+
             <span>
               Interior / Finish Direction
             </span>
+
           </div>
+
 
         </div>
 
@@ -1856,59 +2453,74 @@ button{
           Interior / Concept 02
         </div>
 
+
         <h3>
           Calm living space
         </h3>
 
+
         <p>
 
-          Soft neutrals, botanical greens and warm
-          architectural accents designed to create
-          a composed and refined interior environment.
+          Soft neutrals, botanical greens
+          and warm architectural accents
+          designed to create a composed
+          and refined interior environment.
 
         </p>
 
 
         <div class="palette">
 
+
           <div class="palette-item palette-ivory">
             <span>IVORY</span>
           </div>
+
 
           <div class="palette-item palette-olive">
             <span>BOTANICAL</span>
           </div>
 
+
           <div class="palette-item palette-stone">
             <span>EARTH</span>
           </div>
+
 
           <div class="palette-item palette-brass">
             <span>BRASS</span>
           </div>
 
+
         </div>
 
+
       </article>
+
 
 
       <!-- PALETTE -->
 
       <article class="paint-card">
 
+
         <div class="paint-visual">
+
 
           <img
             src="IMG_2533.jpeg"
             alt="Architectural colour palette study"
-            onerror="this.style.display='none'"
           >
 
+
           <div class="paint-overlay">
+
             <span>
               Colour / Material Direction
             </span>
+
           </div>
+
 
         </div>
 
@@ -1917,40 +2529,50 @@ button{
           Colour / Direction 03
         </div>
 
+
         <h3>
           Palette library
         </h3>
 
+
         <p>
 
           A growing visual language for future
-          interiors, exteriors and decorative projects —
-          balancing natural tones with refined accents.
+          interiors, exteriors and decorative
+          projects — balancing natural tones
+          with refined accents.
 
         </p>
 
 
         <div class="palette">
 
+
           <div class="palette-item palette-olive">
             <span>OLIVE</span>
           </div>
+
 
           <div class="palette-item palette-brass">
             <span>BRASS</span>
           </div>
 
+
           <div class="palette-item palette-stone">
             <span>STONE</span>
           </div>
+
 
           <div class="palette-item palette-ivory">
             <span>IVORY</span>
           </div>
 
+
         </div>
 
+
       </article>
+
 
     </div>
 
@@ -1959,25 +2581,38 @@ button{
 </section>
 
 
-<!-- =======================================================
-     QUANTITATIVE FINANCE
-======================================================= -->
 
-<section class="section dark" id="quant">
+<!-- =====================================================
+     QUANTITATIVE FINANCE & SYSTEMS
+===================================================== -->
+
+<section
+  class="section dark"
+  id="quant"
+>
 
   <div class="container">
 
+
     <div class="section-head">
+
 
       <div>
 
         <div class="eyebrow">
+
           04 · Quantitative Finance & Systems
+
         </div>
 
+
         <h2 class="section-title">
-          Research the idea.<br>
+
+          Research the idea.
+          <br>
+
           <i>Engineer the process.</i>
+
         </h2>
 
       </div>
@@ -1985,16 +2620,19 @@ button{
 
       <div class="section-desc">
 
-        Quantitative market research, systematic trading
-        research and automated execution architecture
-        across XAU/USD and digital assets.
+        Quantitative market research, systematic
+        trading research and automated execution
+        architecture across XAU/USD and digital assets.
 
       </div>
+
 
     </div>
 
 
+
     <div class="quant-intro">
+
 
       <div class="quant-big">
 
@@ -2026,17 +2664,21 @@ button{
 
       </div>
 
+
     </div>
 
 
-    <!-- XAUUSD MARKET DASHBOARD -->
+
+    <!-- XAUUSD VISUAL -->
 
     <div class="quant-dashboard">
 
 
       <div class="quant-chart">
 
+
         <div class="chart-top">
+
 
           <div>
 
@@ -2052,13 +2694,17 @@ button{
 
 
           <div class="chart-status">
-            SYSTEM VIEW / ILLUSTRATIVE
+
+            ILLUSTRATIVE RESEARCH VIEW
+
           </div>
+
 
         </div>
 
 
         <div class="chart-area">
+
 
           <svg
             class="chart-svg"
@@ -2067,99 +2713,100 @@ button{
             aria-label="Illustrative XAUUSD market structure chart"
           >
 
-            <!-- price structure -->
+
+            <!-- MARKET STRUCTURE -->
 
             <polyline
               points="
-                0,250
-                55,230
-                100,244
-                145,195
-                190,210
-                240,170
-                285,185
-                335,125
-                390,145
-                435,105
-                480,122
-                525,82
-                575,104
-                620,70
-                670,92
-                715,48
-                760,70
-                810,34
-                850,53
-                900,22
-              "
+              0,250
+              55,230
+              100,244
+              145,195
+              190,210
+              240,170
+              285,185
+              335,125
+              390,145
+              435,105
+              480,122
+              525,82
+              575,104
+              620,70
+              670,92
+              715,48
+              760,70
+              810,34
+              850,53
+              900,22"
               fill="none"
               stroke="#c9a85b"
               stroke-width="3"
             />
 
+
             <!-- EMA 20 -->
 
             <polyline
               points="
-                0,270
-                55,252
-                100,248
-                145,225
-                190,218
-                240,198
-                285,190
-                335,165
-                390,158
-                435,135
-                480,128
-                525,112
-                575,105
-                620,94
-                670,87
-                715,72
-                760,69
-                810,54
-                850,50
-                900,39
-              "
+              0,270
+              55,252
+              100,248
+              145,225
+              190,218
+              240,198
+              285,190
+              335,165
+              390,158
+              435,135
+              480,128
+              525,112
+              575,105
+              620,94
+              670,87
+              715,72
+              760,69
+              810,54
+              850,50
+              900,39"
               fill="none"
               stroke="#f0eee7"
               stroke-width="1.3"
               opacity=".65"
             />
 
+
             <!-- EMA 50 -->
 
             <polyline
               points="
-                0,286
-                55,280
-                100,274
-                145,264
-                190,257
-                240,244
-                285,235
-                335,223
-                390,211
-                435,198
-                480,187
-                525,175
-                575,164
-                620,152
-                670,140
-                715,128
-                760,118
-                810,105
-                850,96
-                900,85
-              "
+              0,286
+              55,280
+              100,274
+              145,264
+              190,257
+              240,244
+              285,235
+              335,223
+              390,211
+              435,198
+              480,187
+              525,175
+              575,164
+              620,152
+              670,140
+              715,128
+              760,118
+              810,105
+              850,96
+              900,85"
               fill="none"
               stroke="#77786f"
               stroke-width="1.3"
               opacity=".8"
             />
 
-            <!-- structure zones -->
+
+            <!-- STRUCTURE LINES -->
 
             <line
               x1="0"
@@ -2170,6 +2817,7 @@ button{
               opacity=".09"
             />
 
+
             <line
               x1="0"
               y1="105"
@@ -2179,7 +2827,8 @@ button{
               opacity=".09"
             />
 
-            <!-- entry marker -->
+
+            <!-- STRUCTURE POINT -->
 
             <circle
               cx="575"
@@ -2187,6 +2836,7 @@ button{
               r="5"
               fill="#c9a85b"
             />
+
 
             <text
               x="590"
@@ -2198,42 +2848,60 @@ button{
               STRUCTURE
             </text>
 
+
           </svg>
+
 
         </div>
 
 
         <div class="chart-legend">
 
-          <span>
-            <i class="legend-line"></i>
-            Structure
-          </span>
 
           <span>
+
+            <i class="legend-line"></i>
+
+            Structure
+
+          </span>
+
+
+          <span>
+
             <i
               class="legend-line"
               style="background:#f0eee7"
             ></i>
+
             EMA 20
+
           </span>
 
+
           <span>
+
             <i
               class="legend-line"
               style="background:#77786f"
             ></i>
+
             EMA 50
+
           </span>
 
+
         </div>
+
 
       </div>
 
 
-      <!-- METRICS -->
+
+      <!-- RESEARCH METRICS -->
 
       <div class="quant-metrics">
+
 
         <div class="metric">
 
@@ -2286,22 +2954,28 @@ button{
 
         </div>
 
+
       </div>
 
+
     </div>
+
 
 
     <!-- SYSTEM ARCHITECTURE -->
 
     <div class="system-panel">
 
+
       <div class="system-head">
+
 
         <div>
 
           <div class="eyebrow gold">
             SYSTEM ARCHITECTURE
           </div>
+
 
           <h3>
             From hypothesis to execution.
@@ -2314,7 +2988,9 @@ button{
           RESEARCH → DEPLOYMENT
         </div>
 
+
       </div>
+
 
 
       <div class="system-flow">
@@ -2407,6 +3083,7 @@ button{
 
       </div>
 
+
     </div>
 
 
@@ -2415,15 +3092,19 @@ button{
 </section>
 
 
-<!-- =======================================================
+
+<!-- =====================================================
      WORKING PRINCIPLES
-======================================================= -->
+===================================================== -->
 
 <section class="section practice">
 
+
   <div class="container">
 
+
     <div class="section-head">
+
 
       <div>
 
@@ -2431,9 +3112,14 @@ button{
           05 · Working Principles
         </div>
 
+
         <h2 class="section-title">
-          Different tools.<br>
+
+          Different tools.
+          <br>
+
           <i>One discipline.</i>
+
         </h2>
 
       </div>
@@ -2447,7 +3133,9 @@ button{
 
       </div>
 
+
     </div>
+
 
 
     <div class="practice-grid">
@@ -2464,11 +3152,14 @@ button{
         </h3>
 
         <p>
+
           Look closely before deciding what something
           means — in a face, a room, a chart or a dataset.
+
         </p>
 
       </article>
+
 
 
       <article class="practice-card">
@@ -2482,11 +3173,14 @@ button{
         </h3>
 
         <p>
+
           Identify the relationships that create the
           visible result and make those relationships clear.
+
         </p>
 
       </article>
+
 
 
       <article class="practice-card">
@@ -2500,11 +3194,14 @@ button{
         </h3>
 
         <p>
+
           Turn intuition into a repeatable workflow
           that can be examined, tested and improved.
+
         </p>
 
       </article>
+
 
 
       <article class="practice-card">
@@ -2518,8 +3215,10 @@ button{
         </h3>
 
         <p>
+
           Remove noise, preserve what works and keep
           improving the quality of the final result.
+
         </p>
 
       </article>
@@ -2527,32 +3226,46 @@ button{
 
     </div>
 
+
   </div>
 
 </section>
 
 
-<!-- =======================================================
-     CONTACT
-======================================================= -->
 
-<section class="contact" id="contact">
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+  class="contact"
+  id="contact"
+>
+
 
   <div class="container">
+
 
     <div class="contact-grid">
 
 
       <div>
 
+
         <div class="eyebrow gold">
           06 · Contact
         </div>
 
+
         <h2>
-          Let’s make<br>
+
+          Let's make
+          <br>
+
           <i>something precise.</i>
+
         </h2>
+
 
         <p class="contact-copy">
 
@@ -2563,11 +3276,15 @@ button{
 
         </p>
 
+
       </div>
+
 
 
       <div class="contact-links">
 
+
+        <!-- EMAIL -->
 
         <a
           class="contact-link"
@@ -2584,6 +3301,8 @@ button{
 
         </a>
 
+
+        <!-- INSTAGRAM -->
 
         <a
           class="contact-link"
@@ -2603,6 +3322,8 @@ button{
         </a>
 
 
+        <!-- WHATSAPP -->
+
         <a
           class="contact-link"
           href="https://wa.me/233200006731"
@@ -2621,8 +3342,27 @@ button{
         </a>
 
 
-       
+        <!-- GITHUB — CORRECTED -->
 
+        <a
+          class="contact-link"
+          href="https://github.com/KyeiEmmanuel"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <span>
+            GitHub
+          </span>
+
+          <span>
+            @KyeiEmmanuel ↗
+          </span>
+
+        </a>
+
+
+        <!-- PERSONAL WEBSITE -->
 
         <a
           class="contact-link"
@@ -2644,38 +3384,56 @@ button{
 
       </div>
 
+
     </div>
+
 
 
     <div class="footer">
 
+
       <span>
+
         © <span id="year"></span>
         Emmanuel Kyei · Rickylove
+
       </span>
+
 
       <span>
-        Artist · Quantitative Finance · System Architecture
+
+        Artist · Quantitative Finance ·
+        System Architecture
+
       </span>
 
+
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- =======================================================
+
+<!-- =====================================================
      JAVASCRIPT
-======================================================= -->
+===================================================== -->
 
 <script>
 
-const menu = document.getElementById("menu");
-const nav = document.getElementById("navlinks");
+const menu =
+  document.getElementById("menu");
+
+const nav =
+  document.getElementById("navlinks");
+
 
 menu.addEventListener("click", () => {
+
   nav.classList.toggle("open");
+
 });
 
 
@@ -2684,7 +3442,9 @@ document
   .forEach(link => {
 
     link.addEventListener("click", () => {
+
       nav.classList.remove("open");
+
     });
 
   });
@@ -2694,6 +3454,7 @@ document.getElementById("year").textContent =
   new Date().getFullYear();
 
 </script>
+
 
 </body>
 </html>
